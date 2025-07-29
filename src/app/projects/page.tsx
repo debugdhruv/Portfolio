@@ -10,6 +10,6 @@ export const revalidate = 0;
 
 export default async function ProjectsPage() {
   const projects = await fetchProjects();
-
+  
   return <ProjectClient projects={projects} />;
 }

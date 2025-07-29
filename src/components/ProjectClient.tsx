@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import { LucideGithub, Globe } from "lucide-react";
+import NavBar from "./NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,8 @@ export default function ProjectClient({ projects }) {
   }, []);
 
   return (
-    <section className={`m-auto p-24 ${inter.className}`}>
+    <section className={` ${inter.className}`}>
+      <NavBar/>
       <div className="flex flex-col gap-4">
         <div className="w-full">
           <div className="flex items-center gap-4">
