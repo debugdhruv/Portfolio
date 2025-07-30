@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
+import NavBar from "@/components/NavBar";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Dhruv | Portfolio",
@@ -9,8 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable} dark`}>
-      <body className="antialiased bg-black text-white">{children}</body>
+    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable} `}>
+      <body className="antialiased">
+        <CustomCursor />
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
