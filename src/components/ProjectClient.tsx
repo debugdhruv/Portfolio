@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
-import { LucideGithub, Globe } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -99,7 +99,7 @@ export default function ProjectClient({ projects }) {
                           rel="noopener noreferrer"
                           className="text-slate-800 dark:text-white hover:text-violet-500 py-1 px-2 font-medium"
                         >
-                          <LucideGithub className="h-4 w-4" />
+                          <Github className="h-4 w-4" />
                         </a>
                       )}
                       {project.properties["Demo URL"].url && (

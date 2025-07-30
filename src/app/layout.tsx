@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
 import CustomCursor from "@/components/CustomCursor";
+import ProgressBar from "@/components/ProgressBar";
+import Preloader from "@/components/PreLoader";
 
 export const metadata: Metadata = {
   title: "Dhruv Tiwari — UX Designer & Developer",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable} `}>
+    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable}`}>
       <head>
         <link rel="icon" href="/ico_light.png" type="image/png" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/ico_dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
@@ -65,6 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
+        <Preloader/>
+        <ProgressBar/>
         <CustomCursor />
         <NavBar />
         {children}

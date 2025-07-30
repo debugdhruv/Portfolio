@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, * {
+html,
+body,
+* {
   cursor: none !important;
 }
 
@@ -72,3 +74,23 @@ html, body, * {
     @apply bg-background text-foreground;
   }
 }
+
+html.dark #nprogress .bar {
+  background: hsl(228, 100%, 70%);
+}
+
+html #nprogress .bar {
+  background: hsl(15, 96%, 58%);
+  height: 4px !important;
+}
+
+
+/* Optional: hide the spinner */
+#nprogress .spinner {
+  display: none !important;
+}
+
+#nprogress .peg {
+  display: none !important;
+}
+
