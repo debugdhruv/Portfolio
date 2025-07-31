@@ -56,7 +56,12 @@ const CustomCursor = () => {
           animate={{
             scale: isClicking ? 1 : isPointer ? 2 : 1.5,
           }}
-          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          transition={{
+            type: "inertia", damping: 45,
+            stiffness: 400,
+            mass: 1,
+            restDelta: 0.001,
+          }}
         />
         <motion.img
           src="/Polygon 2.svg"
@@ -65,7 +70,12 @@ const CustomCursor = () => {
           animate={{
             scale: isClicking ? 1 : isPointer ? 2 : 1.5,
           }}
-          transition={{ type: "spring", stiffness: 200, damping: 10 }}
+          transition={{
+            type: "inertia", damping: 45,
+            stiffness: 400,
+            mass: 1,
+            restDelta: 0.001,
+          }}
         />
       </div>
     </motion.div>

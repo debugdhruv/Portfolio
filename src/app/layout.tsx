@@ -7,11 +7,11 @@ import ProgressBar from "@/components/ProgressBar";
 import Preloader from "@/components/PreLoader";
 
 export const metadata: Metadata = {
-  title: "Dhruv Tiwari — UX Designer & Developer",
+  title: "Dhruv — Product Designer & Developer",
   description: "Portfolio of Dhruv Narayan Tiwari, showcasing design and development work.",
   openGraph: {
     title: "Dhruv Tiwari",
-    description: "UX Designer & Frontend Developer Portfolio",
+    description: "Product Designer & Frontend Developer Portfolio",
     images: ["/og-image.png"],
   },
 };
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/ico_light.png" type="image/png" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/ico_dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
-        <meta property="og:title" content="Dhruv Tiwari — UX Designer & Developer" />
+        <meta property="og:title" content="Dhruv Tiwari — Product Designer & Developer" />
         <meta property="og:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing design and development work." />
         <meta property="og:image" content="https://dhruvux.vercel.app/og-image.png" />
         <meta property="og:type" content="website" />
@@ -30,13 +30,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dhruv Narayan Tiwari" />
-        <meta name="keywords" content="UX Designer, Frontend Developer, Portfolio, UI/UX, Dhruv Tiwari, React, Next.js, Design Portfolio" />
+        <meta name="keywords" content="Product Designer, Frontend Developer, Portfolio, UI/UX, Dhruv Narayan Tiwari, Dhruv Tiwari, React, Next.js, Design Portfolio" />
         <meta name="theme-color" content="#081417" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#FFFBF2" media="(prefers-color-scheme: light)" />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dhruv Tiwari — UX Designer & Developer" />
-        <meta name="twitter:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing modern UI/UX and frontend development." />
+        <meta name="twitter:title" content="Dhruv Tiwari — Product Designer & Frontend Developer" />
+        <meta name="twitter:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing modern product design and frontend development." />
         <meta name="twitter:image" content="https://dhruvux.vercel.app/og-image.png" />
         <meta name="twitter:creator" content="@yourTwitterHandle" />
         {/* Mobile Optimization */}
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "https://www.linkedin.com/in/dhruvux",
                 "https://github.com/debugdhruv"
               ],
-              jobTitle: "UX Designer & Frontend Developer",
+              jobTitle: "Product Designer & Frontend Developer",
               worksFor: {
                 "@type": "Organization",
                 name: "Freelance / Job or Open to Work"
