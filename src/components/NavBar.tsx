@@ -10,20 +10,20 @@ const NavBar = () => {
     <header className="fixed top-0 z-50 w-full backdrop-blur-lg bg-background/20">
       <div className="relative mx-auto w-full max-w-9xl px-6 py-4">
         {/* Flex container for left and right */}
-        <div className="flex w-full items-center justify-between">
+        <div className="mt-6 sm:mt-0 flex w-full items-center justify-between">
           {/* Left - Logo */}
-          <div className="hover:text-primary ml-12 sm:text-3xl text-2xl font-barcode">
+          <div className="hover:text-primary sm:ml-12 sm:text-3xl text-2xl font-barcode">
             <Link href="/">DHRUV NARAYAN TIWARI</Link>
           </div>
 
           {/* Right - CTA (desktop) and Menu icon (mobile) */}
           <div className="mr-12 flex items-center gap-4">
             <Link href="https://calendly.com/dhruvtiwari-1130/booktheslot" target="_blank" rel="noopener noreferrer">
-              <Button className="font-inter hidden lg:inline-flex rounded-lg px-4 py-6 text-md font-bold text-white">
-                Let&#39;s Talk
+              <Button className="shadow-none border font-inter hidden lg:inline-flex rounded-lg px-4 py-6 text-md font-bold text-foreground bg-transparent hover:bg-primary/80 active:bg-primary">
+                Book a call
               </Button>
             </Link>
-            <button className="lg:hidden">
+            <button className="lg:hidden -mr-8">
               <Menu className="h-6 w-6" />
             </button>
           </div>

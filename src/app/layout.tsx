@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable}`}>
+    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable} dark`}>
       <head>
         <link rel="icon" href="/ico_light.png" type="image/png" media="(prefers-color-scheme: light)" />
         <link rel="icon" href="/ico_dark.png" type="image/png" media="(prefers-color-scheme: dark)" />
