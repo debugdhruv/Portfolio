@@ -1,12 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect } from "react";
+
+declare global {
+  interface Window {
+    updateFavicon?: () => void;
+  }
+}
 
 export default function Home() {
   const handleToggle = () => {
-    // Theme toggle logic here
+    if (typeof window !== "undefined") {
+      const html = document.documentElement;
+      const currentTheme = html.classList.contains("dark") ? "dark" : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      html.classList.remove(currentTheme);
+      html.classList.add(newTheme);
+      localStorage.setItem("theme", newTheme);
+      window.updateFavicon?.();
+    }
   };
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const html = document.documentElement;
+
+      if (savedTheme) {
+        html.classList.add(savedTheme);
+      } else {
+        html.classList.add(prefersDark ? "dark" : "light");
+      }
+    }
+  });
 
   return (
     <main className="relative w-full flex items-center justify-center px-4 pt-24 md:pt-32 lg:pt-40">
@@ -17,7 +45,7 @@ export default function Home() {
           height="0"
           src="/dots.svg"
           alt="Background Dots"
-          className="absolute inset-0 w-full h-full opacity-25 object-cover pointer-events-none z-0"
+          className="absolute inset-0 w-full h-full dark:opacity-25 object-cover pointer-events-none z-0"
         />
 
         <div className="relative z-10 flex flex-col items-start space-y-6">
@@ -44,43 +72,43 @@ export default function Home() {
           {/* PRODUCT */}
           <h2 className="text-7xl sm:text-7xl md:text-9xl lg:text-[11.6rem] font-bold font-whyte text-primary leading-none relative">
             PRODUCT
-            <div className="absolute left-[280px] top-[-4px] w-[316px] h-[154px] z-20 cursor-pointer group" onClick={handleToggle}>
-              <div className="w-full h-full rounded-full transition-all duration-300 ease-out bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91] flex items-center px-1.5">
-                <div className="w-[122px] h-[122px] bg-white rounded-full shadow-md transform transition-transform duration-300 ease-out translate-x-0 group-[.dark]:translate-x-[194px]" />
+            <div className="absolute left-[260px] top-[-64px] w-[320px] h-[244px] z-10 blur-3xl opacity-50 rounded-full bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91]" />
+            <div className="absolute left-[264px] top-[-16px] z-20 cursor-pointer group" onClick={handleToggle}>
+              <div className="w-[320px] h-[164px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-4 px-6">
+              <div className="w-[100px] h-[100px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[164px]" />
               </div>
             </div>
           </h2>
 
           {/* DESIGNER */}
           <div className="flex flex-col items-start relative">
-            <h2 className="relative text-7xl sm:text-7xl md:text-9xl lg:text-[11rem] font-bold font-whyte text-foreground">
-              DES<span className="relative inline-block">
-                I
+            <h2 className="relative text-7xl sm:text-7xl md:text-9xl lg:text-[11rem] font-bold font-whyte text-foreground flex items-center gap-2">
+              DES
+              <span className="relative w-[60px] h-[130px] -top-8 inline-block">
                 <Image
                   src="/i_overlay_light.png"
-                  alt="i overlay"
-                  width={60}
-                  height={100}
-                  className="absolute left-0 top-0 w-full h-full object-contain dark:hidden"
+                  alt="I Overlay Light"
+                  fill
+                  className="object-contain dark:hidden"
                 />
                 <Image
                   src="/i_overlay_dark.png"
-                  alt="i overlay dark"
-                  width={60}
-                  height={100}
-                  className="absolute left-0 top-0 w-full h-full object-contain hidden dark:block"
+                  alt="I Overlay Dark"
+                  fill
+                  className="object-contain hidden dark:block"
                 />
-              </span>GNER
+              </span>
+              GNER
             </h2>
             <Image
               src="/finder.png"
               alt="Finder"
-              width={64}
-              height={64}
-              className="absolute right-[-32px] bottom-[-12px] rotate-[18deg] z-10"
+              width={80}
+              height={80}
+              className="absolute right-[-44px] bottom-[82px] rotate-[10deg] z-10"
             />
             <div className="w-full flex justify-end">
-              <div className="font-whyte text-lg sm:text-xl md:text-3xl lg:text-4xl font-bold text-foreground">
+              <div className="font-whyte text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-foreground">
                 & DEVELOPER
               </div>
             </div>

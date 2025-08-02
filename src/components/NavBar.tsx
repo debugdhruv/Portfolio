@@ -19,7 +19,7 @@ const NavBar = () => {
           {/* Right - CTA (desktop) and Menu icon (mobile) */}
           <div className="mr-12 flex items-center gap-4">
             <Link href="https://calendly.com/dhruvtiwari-1130/booktheslot" target="_blank" rel="noopener noreferrer">
-              <Button className="shadow-none border font-inter hidden lg:inline-flex rounded-lg px-4 py-6 text-md font-bold text-foreground bg-transparent hover:bg-primary/80 active:bg-primary">
+              <Button className="shadow-none border font-inter hidden lg:inline-flex rounded-lg px-4 py-6 text-md font-bold text-foreground bg-transparent hover:bg-primary hover:text-white active:bg-primary">
                 Book a call
               </Button>
             </Link>
