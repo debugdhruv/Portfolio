@@ -21,7 +21,7 @@ export default function Home() {
       window.updateFavicon?.();
     }
   };
-  
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
@@ -65,7 +65,7 @@ export default function Home() {
               />
               <p className="text-xs sm:text-sm md:text-base text-left font-tiro text-muted-foreground tracking-wider">
                 भारतीय <span className="text-primary font-bold">PRODUCT DESIGNER</span>,
-                डिज़ाइन के <br/>माध्यम से बेहतर मानव अनुभव बनाने में शामिल ।।
+                डिज़ाइन के <br />माध्यम से बेहतर मानव अनुभव बनाने में शामिल ।।
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
             <div className="absolute left-[260px] top-[-64px] w-[320px] h-[244px] z-10 blur-3xl opacity-50 rounded-full bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91]" />
             <div className="absolute left-[264px] top-[-16px] z-20 cursor-pointer group" onClick={handleToggle}>
               <div className="w-[320px] h-[164px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-5 px-6">
-              <div className="w-[112px] h-[112px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[154px]" />
+                <div className="w-[112px] h-[112px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[154px]" />
               </div>
             </div>
           </h2>
@@ -125,20 +125,57 @@ export default function Home() {
         </div>
       </section>
       {/* lil intro */}
-      <section>
-        <div className="text-wrap mt-10 font-inter font-semibold text-2xl flex justify-center items-center max-w-3xl text-foreground">
-          <h1>
-          Hi, I am Dhruv ✌🏻 practicing design since 2020 focused on designing 🖌️ and building digital product 🪐, brands 
+      <section className="w-full max-w-4xl mx-auto px-4 mt-24">
+        <div className="font-inter font-semibold text-5xl flex justify-center items-center text-foreground">
+          <h1 className="leading-snug tracking-tight">
+            Hi, I am Dhruv ✌🏻 practicing design since
+            <span className="absolute ml-8 mt-1 px-6 py-2 rounded-full border-2 border-foreground text-4xl">
+              2020
+            </span>
+            focused on designing 🖌️ and building digital product 🪐, brands{" "}
             <Image
-            src="/fingerprint.svg"
-            alt="FingerPrint"
-            width={30}
-            height={30}
-            className="inline-block"/>
-          and experiences 🪄.
+              src="/fingerprint.svg"
+              alt="FingerPrint"
+              width={50}
+              height={50}
+              className="inline-block"
+            />{" "}
+            and experiences 🪄.
           </h1>
         </div>
       </section>
+      {/* skills */}
+      <section>
+
+      </section>
+
+
+      {/* Featured Work */}
+      <section>
+
+      </section>
+
+      {/* timeline */}
+      <section>
+
+      </section>
+
+
+      {/* footer */}
+      <section className="mt-96 flex flex-col items-center justify-center text-center space-y-4">
+        <div className="flex items-center justify-center space-x-4">
+          <h1 className="text-7xl md:text-8xl font-whyte">INTERESTED</h1>
+          <Image
+            src="/peace_light.svg"
+            alt="hi"
+            width={96}
+            height={96}
+            className="inline-block"
+          />
+        </div>
+        <h1 className="text-6xl md:text-7xl font-whyte">IN WORKING TOGETHER?</h1>
+      </section>
+
     </main>
   );
 }

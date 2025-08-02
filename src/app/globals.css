@@ -8,6 +8,12 @@ body,
   cursor: none !important;
 }
 
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+
 @layer base {
   :root {
     --background: 39 100% 97%;
@@ -95,11 +101,11 @@ html #nprogress .bar {
 }
 
 ::selection {
-  background-color: #FFFFFF;
-  color: #00586a;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }
 
 ::-moz-selection {
-  background-color: #FFFFFF;
-  color: #00586a;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }
