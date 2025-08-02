@@ -37,7 +37,8 @@ export default function Home() {
   });
 
   return (
-    <main className="relative w-full flex items-center justify-center px-4 pt-24 md:pt-32 lg:pt-40">
+    <main className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-40">
+      {/* Hero Section */}
       <section className="relative max-w-5xl w-full mx-auto px-4 py-12">
         {/* Dot grid background (only inside hero section) */}
         <Image
@@ -74,8 +75,8 @@ export default function Home() {
             PRODUCT
             <div className="absolute left-[260px] top-[-64px] w-[320px] h-[244px] z-10 blur-3xl opacity-50 rounded-full bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91]" />
             <div className="absolute left-[264px] top-[-16px] z-20 cursor-pointer group" onClick={handleToggle}>
-              <div className="w-[320px] h-[164px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-4 px-6">
-              <div className="w-[100px] h-[100px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[164px]" />
+              <div className="w-[320px] h-[164px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-5 px-6">
+              <div className="w-[112px] h-[112px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[154px]" />
               </div>
             </div>
           </h2>
@@ -121,6 +122,21 @@ export default function Home() {
             <span className="text-foreground font-bold">Open</span> to new job offers{" "}
             <span className="inline-block w-2 h-2 ml-2">🟢</span>
           </div>
+        </div>
+      </section>
+      {/* lil intro */}
+      <section>
+        <div className="text-wrap mt-10 font-inter font-semibold text-2xl flex justify-center items-center max-w-3xl text-foreground">
+          <h1>
+          Hi, I am Dhruv ✌🏻 practicing design since 2020 focused on designing 🖌️ and building digital product 🪐, brands 
+            <Image
+            src="/fingerprint.svg"
+            alt="FingerPrint"
+            width={30}
+            height={30}
+            className="inline-block"/>
+          and experiences 🪄.
+          </h1>
         </div>
       </section>
     </main>

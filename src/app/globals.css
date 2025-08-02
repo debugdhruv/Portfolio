@@ -94,3 +94,12 @@ html #nprogress .bar {
   display: none !important;
 }
 
+::selection {
+  background-color: #FFFFFF;
+  color: #00586a;
+}
+
+::-moz-selection {
+  background-color: #FFFFFF;
+  color: #00586a;
+}
