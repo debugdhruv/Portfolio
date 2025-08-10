@@ -37,12 +37,12 @@ export default function Home() {
   });
 
   // TypingAnimation role cycling logic
-  const roles = ["& DEVELOPER", "& THINKER", "& CREATOR"];
+  const roles = ["& DEVELOPER", "& DESIGNER", "& CREATOR"];
   const [currentRoleIdx, setCurrentRoleIdx] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRoleIdx((prev) => (prev + 1) % roles.length);
-    }, 3500); // Change every 2.5 seconds
+    }, 2500); // Change every 2.5 seconds
     return () => clearInterval(interval);
   }, [roles.length]);
 

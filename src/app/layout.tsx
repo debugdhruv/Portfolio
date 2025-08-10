@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
-import CustomCursor from "@/components/CustomCursor";
+// import CustomCursor from "@/components/CustomCursor";
 import ProgressBar from "@/components/ProgressBar";
 import Preloader from "@/components/PreLoader";
 
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <Preloader/>
         <ProgressBar/>
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <NavBar />
         {children}
       </body>
