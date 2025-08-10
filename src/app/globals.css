@@ -69,6 +69,9 @@ select {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
   }
+  .theme {
+    --animate-meteor: meteor 5s linear infinite;
+  }
 }
 
 @layer base {
@@ -90,7 +93,6 @@ html #nprogress .bar {
   height: 4px !important;
 }
 
-
 /* Optional: hide the spinner */
 #nprogress .spinner {
   display: none !important;
@@ -108,4 +110,20 @@ html #nprogress .bar {
 ::-moz-selection {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
+}
+
+@theme inline {
+  @keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+    }
+  70% {
+    opacity: 1;
+    }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
+    }
+  }
 }

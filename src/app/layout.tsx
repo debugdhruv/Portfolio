@@ -2,10 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
-// import CustomCursor from "@/components/CustomCursor";
+import CustomCursor from "@/components/CustomCursor";
 import ProgressBar from "@/components/ProgressBar";
 import Preloader from "@/components/PreLoader";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.vercel.app"),
@@ -91,8 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <Preloader/>
         <ProgressBar/>
-        {/* <CustomCursor /> */}
-        <SmoothCursor />
+        <CustomCursor />
         <NavBar />
         {children}
       </body>
