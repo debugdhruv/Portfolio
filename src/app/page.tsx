@@ -2,7 +2,7 @@
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import { ArrowUp } from 'lucide-react';
 declare global {
   interface Window {
     updateFavicon?: () => void;
@@ -45,6 +45,29 @@ export default function Home() {
     }, 2500); // Change every 2.5 seconds
     return () => clearInterval(interval);
   }, [roles.length]);
+
+  useEffect(() => {
+    const btn = document.getElementById("backToTopBtn");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (btn) {
+            if (entry.isIntersecting) {
+              btn.classList.remove("hidden");
+            } else {
+              btn.classList.add("hidden");
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    const footer = document.querySelector("footer");
+    if (footer) observer.observe(footer);
+    return () => {
+      if (footer) observer.unobserve(footer);
+    };
+  }, []);
 
   return (
     <main className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-40">
@@ -119,7 +142,7 @@ export default function Home() {
               height={100}
               className="w-12 sm:w-20 sm:h-20 absolute right-[-32px] bottom-[38px] sm:right-[-44px] sm:bottom-[82px] rotate-[10deg] z-10"
             />
-          {/* & DEVELOPER under DESIGNER */}
+            {/* & DEVELOPER under DESIGNER */}
             <div className="w-full flex justify-end">
               <div className="font-whyte text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-foreground">
                 <TypingAnimation duration={100} delay={0} className="inline-block" startOnView={false}>
@@ -199,8 +222,163 @@ export default function Home() {
       </section>
 
 
-      {/* footer */}
-      <section className="mt-96 flex flex-col items-center justify-center text-center space-y-4">
+      {/* Footer */}
+      <footer className="mt-48 w-full px-6 py-16 flex flex-col items-center justify-center text-center space-y-8 relative">
+
+        {/* Heading + Peace Icon */}
+        <div className="flex items-center justify-center space-x-4">
+          <h1 className="text-6xl md:text-8xl font-whyte">INTERESTED</h1>
+          <>
+            <Image
+              src="/peace_light.svg"
+              alt="Peace Light"
+              width={96}
+              height={96}
+              className="inline-block dark:hidden"
+            />
+            <Image
+              src="/peace_dark.svg"
+              alt="Peace Dark"
+              width={96}
+              height={96}
+              className="hidden dark:inline-block"
+            />
+          </>
+        </div>
+        <h1 className="text-6xl md:text-8xl font-whyte">IN WORKING TOGETHER?</h1>
+
+        {/* Contact Email with polygon cursor */}
+        <div className="text-center">
+          <p className="text-base sm:text-lg text-foreground">Contact me:</p>
+          <p className="text-lg sm:text-xl font-semibold text-foreground relative inline-block">
+            dhruvtiwari.1130@gmail.com
+            <>
+              <Image
+                src="/Polygon 1.svg"
+                alt="Cursor Polygon Light"
+                width={20}
+                height={20}
+                className="absolute -right-6 top-1/2 transform -translate-y-1/2 dark:hidden"
+              />
+              <Image
+                src="/Polygon 2.svg"
+                alt="Cursor Polygon Dark"
+                width={20}
+                height={20}
+                className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden dark:inline-block"
+              />
+            </>
+          </p>
+        </div>
+
+        {/* Bottom row: credits, socials, copyright */}
+        <div className="w-full flex flex-col md:flex-row items-center justify-between mt-12 text-sm text-muted-foreground space-y-4 md:space-y-0">
+
+          {/* Credits */}
+          <p className="text-left">
+            Designed &amp; Developed by
+            <br />
+            <span className="text-primary font-semibold">Dhruv Narayan Tiwari</span>
+          </p>
+
+          {/* Social buttons */}
+          <div className="flex space-x-3">
+            {/* Instagram */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+            >
+              <>
+                {/* Light mode default: show dark icon */}
+                <Image src="/instagram_dark.svg" alt="Instagram Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
+                {/* Dark mode default: show light icon */}
+                <Image src="/instagram_light.svg" alt="Instagram Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
+                {/* Hover (both light & dark): show light icon */}
+                <Image src="/instagram_light.svg" alt="Instagram Light Hover" width={16} height={16} className="hidden group-hover:block" />
+              </>
+              <span>|</span>
+              <span>Instagram</span>
+            </a>
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+            >
+              <>
+                {/* Light mode default: show dark icon */}
+                <Image src="/linkedin_dark.svg" alt="LinkedIn Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
+                {/* Dark mode default: show light icon */}
+                <Image src="/linkedin_light.svg" alt="LinkedIn Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
+                {/* Hover (both light & dark): show light icon */}
+                <Image src="/linkedin_light.svg" alt="LinkedIn Light Hover" width={16} height={16} className="hidden group-hover:block" />
+              </>
+              <span>|</span>
+              <span>LinkedIn</span>
+            </a>
+            {/* Behance */}
+            <a
+              href="https://behance.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+            >
+              <>
+                {/* Light mode default: show dark icon */}
+                <Image src="/behance_dark.svg" alt="Behance Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
+                {/* Dark mode default: show light icon */}
+                <Image src="/behance_light.svg" alt="Behance Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
+                {/* Hover (both light & dark): show light icon */}
+                <Image src="/behance_light.svg" alt="Behance Light Hover" width={16} height={16} className="hidden group-hover:block" />
+              </>
+              <span>|</span>
+              <span>Behance</span>
+            </a>
+            {/* Twitter/X */}
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+            >
+              <>
+                {/* Light mode default: show dark icon */}
+                <Image src="/x_dark.svg" alt="Twitter Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
+                {/* Dark mode default: show light icon */}
+                <Image src="/x_light.svg" alt="Twitter Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
+                {/* Hover (both light & dark): show light icon */}
+                <Image src="/x_light.svg" alt="Twitter Light Hover" width={16} height={16} className="hidden group-hover:block" />
+              </>
+              <span>|</span>
+              <span>Twitter</span>
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <p className="hover:text-primary">© 2024 - All Rights Reserved</p>
+        </div>
+
+        {/* Back to top button */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-foreground text-background flex items-center justify-center shadow-lg hover:scale-110 transition"
+          id="backToTopBtn">
+            <ArrowUp size={30}/>
+        </button>
+      </footer>
+
+    </main>
+  );
+}
+
+
+
+
+
+{/* <section className="mt-96 flex flex-col items-center justify-center text-center space-y-4">
         <div className="flex items-center justify-center space-x-4">
           <h1 className="text-6xl md:text-8xl font-whyte">INTERESTED</h1>
           <Image
@@ -212,8 +390,4 @@ export default function Home() {
           />
         </div>
         <h1 className="text-6xl md:text-8xl font-whyte">IN WORKING TOGETHER?</h1>
-      </section>
-
-    </main>
-  );
-}
+      </section> */}
