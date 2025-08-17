@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <SmoothScroll/>
-        {/* <Preloader/> */}
+        <Preloader/>
         <ProgressBar/>
         <CustomCursor />
         <NavBar />
