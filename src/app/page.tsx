@@ -3,6 +3,8 @@ import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUp } from 'lucide-react';
+import { motion } from "framer-motion";
+
 declare global {
   interface Window {
     updateFavicon?: () => void;
@@ -47,7 +49,12 @@ export default function Home() {
   }, [roles.length]);
 
   return (
-    <main className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-28">
+    <motion.main
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-28">
       {/* Hero Section */}
       <section className="relative max-w-5xl w-full mx-auto px-4 py-12">
         {/* Dot grid background (only inside hero section) */}
@@ -62,9 +69,14 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-start space-y-6">
           {/* Top line: Creative + gif */}
           <div className="flex items-end justify-between w-full mb-4">
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[8.2rem] font-italiana text-foreground">
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-5xl sm:text-6xl md:text-8xl lg:text-[8.2rem] font-italiana text-foreground">
               Creative
-            </h1>
+            </motion.h1>
             <div className="ml-4 sm:ml-0 flex flex-col items-start">
               <Image
                 width="492"
@@ -74,15 +86,25 @@ export default function Home() {
                 unoptimized
                 className="rounded-3xl object-contain mb-2"
               />
-              <p className="text-xs sm:text-sm md:text-base text-left font-tiro text-muted-foreground tracking-wider">
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="text-xs sm:text-sm md:text-base text-left font-tiro text-muted-foreground tracking-wider">
                 भारतीय <span className="text-primary font-bold">PRODUCT DESIGNER</span>,
                 डिज़ाइन के <br />माध्यम से बेहतर मानव अनुभव बनाने में शामिल ।।
-              </p>
+              </motion.p>
             </div>
           </div>
 
           {/* PRODUCT */}
-          <h2 className="text-7xl sm:text-7xl md:text-9xl lg:text-[11.6rem] font-bold font-whyte text-primary leading-none relative">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-7xl sm:text-7xl md:text-9xl lg:text-[11.6rem] font-bold font-whyte text-primary leading-none relative">
             PRODUCT
             <div className="absolute left-[90px] top-[-32px] sm:left-[260px] sm:top-[-64px] w-[196px] h-[122px] sm:w-[320px] sm:h-[244px] z-10 blur-3xl opacity-50 rounded-full bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91]" />
             <div className="absolute left-[100px] top-[-8px] sm:left-[264px] sm:top-[-16px] z-20 cursor-pointer group" onClick={handleToggle}>
@@ -90,11 +112,16 @@ export default function Home() {
                 <div className="w-[44px] h-[44px] sm:w-[112px] sm:h-[112px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[58px] sm:dark:translate-x-[154px]" />
               </div>
             </div>
-          </h2>
+          </motion.h2>
 
           {/* DESIGNER */}
           <div className="flex flex-col items-start relative">
-            <h2 className="relative text-7xl sm:text-7xl md:text-9xl lg:text-[11rem] font-bold font-whyte text-foreground flex items-center gap-1 sm:gap-2">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative text-7xl sm:text-7xl md:text-9xl lg:text-[11rem] font-bold font-whyte text-foreground flex items-center gap-1 sm:gap-2">
               DES
               <span className="relative w-[28px] h-[56px] sm:w-[60px] sm:h-[130px] -top-4 sm:-top-8 inline-block">
                 <Image
@@ -111,7 +138,7 @@ export default function Home() {
                 />
               </span>
               GNER
-            </h2>
+            </motion.h2>
             <Image
               src="/finder.png"
               alt="Finder"
@@ -137,9 +164,14 @@ export default function Home() {
         </div>
       </section>
       {/* lil intro */}
-      <section className="w-full max-w-5xl mx-auto px-4 mt-24">
-        <div className="font-inter font-semibold text-3xl sm:text-5xl flex justify-center items-center text-justify text-foreground">
-          <h1 className="leading-normal tracking-tight">
+      <section className="w-full max-w-6xl mx-auto px-4 mt-20">
+        <div className="font-inter font-semibold text-3xl sm:text-6xl flex justify-center items-center text-justify text-foreground">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="leading-normal tracking-tight">
             Hi, I am{" "}
             <Image
               src="/light_mini.png"
@@ -156,13 +188,14 @@ export default function Home() {
               className="mx-2 align-baseline hidden dark:inline"
             />{" "}
             Dhruv ✌🏻 practicing design since
-            <span className="hidden sm:inline absolute ml-8 mt-1 px-6 py-2 rounded-full border-2 border-foreground text-4xl">
+            <span className="hidden sm:inline absolute ml-6 mt-5 px-6 py-2 rounded-full border-2 border-foreground text-4xl">
               2020
             </span>
             <span className="inline sm:hidden px-3 py-1 rounded-full border border-foreground text-lg mx-2">
               2020
             </span>
-            focused on designing 🖌️ and building digital product 🪐, brands{" "}
+            <span className="inline sm:hidden">focused on designing 🖌️ and building digital 🪐<br />products, brands{" "}</span>
+            <span className="hidden sm:inline"><br />focused on designing 🖌️ and building digital 🪐 products, brands{" "}</span>
             <Image
               src="/fingerprint.svg"
               alt="FingerPrint"
@@ -178,12 +211,25 @@ export default function Home() {
               className="hidden dark:inline-block"
             />{" "}
             and experiences 🪄.
-          </h1>
+          </motion.h1>
         </div>
       </section>
       {/* skills */}
-      <section>
-
+      <section className="flex justify-center items-center mt-14">
+        <Image
+              src="/skills_light.svg"
+              alt="Skills"
+              width={1200}
+              height={1200}
+              className="block dark:hidden"
+            />
+            <Image
+              src="/skills_dark.svg"
+              alt="Skills Dark"
+              width={1200}
+              height={1200}
+              className="hidden dark:block"
+            />
       </section>
 
 
@@ -204,7 +250,12 @@ export default function Home() {
         <div className="flex-grow flex flex-col justify-center items-center w-full">
           {/* Heading + Peace Icon */}
           <div className="flex items-baseline justify-center space-x-4">
-            <h1 className="text-5xl md:text-7xl font-whyte">INTERESTED</h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-7xl font-whyte">INTERESTED</ motion.h1>
             <>
               <Image
                 src="/peace_light.svg"
@@ -222,12 +273,27 @@ export default function Home() {
               />
             </>
           </div>
-          <h1 className="text-5xl md:text-7xl mt-4 font-whyte">IN WORKING TOGETHER?</h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl mt-4 font-whyte">IN WORKING TOGETHER?</motion.h1>
 
           {/* Contact Email with polygon cursor */}
           <div className="text-center mt-8">
-            <p className="text-base mb-1 sm:text-2xl font-semibold text-foreground">Connect with me:</p>
-            <p className="text-xl sm:text-2xl hover:text-primary font-bold text-foreground relative inline-block">
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-base mb-1 sm:text-2xl font-semibold text-foreground">Connect with me:</motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-xl sm:text-2xl hover:text-primary font-bold text-foreground relative inline-block">
               dhruvtiwari.1130@gmail.com
               <>
                 <Image
@@ -245,7 +311,7 @@ export default function Home() {
                   className="absolute -right-4 -bottom-12 translate-x-6 translate-y-2 hidden dark:block animate-fly"
                 />
               </>
-            </p>
+            </motion.p>
           </div>
         </div>
 
@@ -253,16 +319,25 @@ export default function Home() {
         <div className="w-full flex flex-col md:flex-row items-center justify-between mt-auto text-sm text-muted-foreground space-y-4 md:space-y-0">
 
           {/* Credits */}
-          <p className="text-left text-foreground">
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-left text-foreground">
             Designed &amp; Developed by
             <br />
             <span className="text-primary font-bold">Dhruv Narayan Tiwari</span>
-          </p>
+          </motion.p>
 
           {/* Social buttons */}
           <div className="flex space-x-3">
             {/* Instagram */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -278,9 +353,13 @@ export default function Home() {
               </>
               <span>|</span>
               <span>Instagram</span>
-            </a>
+            </motion.a>
             {/* LinkedIn */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -296,9 +375,13 @@ export default function Home() {
               </>
               <span>|</span>
               <span>LinkedIn</span>
-            </a>
+            </motion.a>
             {/* Behance */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
               href="https://behance.net"
               target="_blank"
               rel="noopener noreferrer"
@@ -314,9 +397,13 @@ export default function Home() {
               </>
               <span>|</span>
               <span>Behance</span>
-            </a>
+            </motion.a>
             {/* Twitter/X */}
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              viewport={{ once: true }}
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -332,11 +419,16 @@ export default function Home() {
               </>
               <span>|</span>
               <span>Twitter</span>
-            </a>
+            </motion.a>
           </div>
 
           {/* Copyright */}
-          <p className="hover:text-primary">© 2024 - All Rights Reserved</p>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="hover:text-primary">© 2024 - All Rights Reserved</motion.p>
         </div>
 
         {/* Back to top button */}
@@ -377,6 +469,6 @@ export default function Home() {
           animation: fly 10s ease-in-out infinite;
         }
       `}</style>
-    </main>
+    </motion.main>
   );
 }

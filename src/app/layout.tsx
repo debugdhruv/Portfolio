@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.vercel.app"),
@@ -88,7 +89,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        <Preloader/>
+        <SmoothScroll/>
+        {/* <Preloader/> */}
         <ProgressBar/>
         <CustomCursor />
         <NavBar />
