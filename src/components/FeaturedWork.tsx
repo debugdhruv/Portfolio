@@ -73,41 +73,48 @@ const FeaturedWork: React.FC = () => {
     );
 
     const ProjectCardComponent = ({ project, isFullWidth }: { project: ProjectCard; isFullWidth: boolean }) => (
-        <div className={`relative group cursor-pointer rounded-xl overflow-hidden ${isFullWidth ? 'col-span-2' : 'col-span-1'}`} style={{ minHeight: '832px' }}>
+        <div className={`relative group cursor-pointer rounded-3xl overflow-hidden ${isFullWidth ? 'col-span-2' : 'col-span-1'}`} style={{ minHeight: '832px' }}>
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url(${project.image})` }}
             >
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 background bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             </div>
 
             {/* Read Time Bar */}
             <ReadTimeBar readTime={project.readTime} />
 
             {/* Content */}
-            <div className="relative flex flex-col justify-end p-8" style={{ minHeight: '832px' }}>
-                <div className="text-background">
+            <div className="relative flex justify-between items-end p-8" style={{ minHeight: '832px' }}>
+                <div className="text-white flex-1">
                     {project.caseStudy && (
-                        <p className="text-foreground/80 mb-2">{project.caseStudy}</p>
+                        <p className="text-sm text-white/80 mb-3 font-medium">{project.caseStudy}</p>
                     )}
 
-                    <h3 className="text-2xl font-bold mb-2 leading-tight">
+                    <h3 className="text-4xl font-bold mb-4 leading-tight">
                         {project.title}
                         {project.description && (
-                            <span className="block text-xl font-normal mt-1">{project.description}</span>
+                            <span className="block text-2xl font-normal mt-2 text-white/90">{project.description}</span>
                         )}
                     </h3>
 
-                    <div className="flex items-center space-x-4 mb-4">
+                    <div className="flex items-center space-x-1 mb-6">
                         {project.tags.map((tag, index) => (
                             <React.Fragment key={index}>
-                                <span className="text-sm text-foreground/90">● {tag}</span>
-                                {index < project.tags.length - 1 && <span className="text-foreground/60">●</span>}
+                                <span className="text-sm text-white/90 flex items-center">
+                                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
+                                    {tag}
+                                </span>
+                                {index < project.tags.length - 1 && <span className="text-white/60 mx-2">●</span>}
                             </React.Fragment>
                         ))}
                     </div>
+                </div>
 
-                    <button className="inline-flex items-center space-x-2 bg-primary text-background px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors group/btn">
+                <div className="ml-8">
+                    <button className="inline-flex items-center space-x-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors group/btn">
                         <span>View Case Study</span>
                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </button>

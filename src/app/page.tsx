@@ -10,9 +10,35 @@ declare global {
   interface Window {
     updateFavicon?: () => void;
   }
+  interface TimelineItem {
+    year: string;
+    project: string;
+    type: "case" | "website" | "gallery";
+  }
 }
+const timeline: TimelineItem[] = [
+  { year: "2021 - 2024", project: "Talent Linker", type: "case" },
+  { year: "2023", project: "DEET Website Revamp", type: "case" },
+  { year: "2023", project: "AI Resume Builder", type: "website" },
+  { year: "2022", project: "Worktruit Landing Page", type: "gallery" },
+  { year: "2023", project: "DEET Website Revamp", type: "case" },
+  { year: "2023", project: "AI Resume Builder", type: "website" },
+  { year: "2022", project: "Worktruit Landing Page", type: "gallery" },
+];
 
 export default function Home() {
+  const getButton = (type: TimelineItem["type"]) => {
+    switch (type) {
+      case "case":
+        return <span className="px-4 py-1 rounded-full bg-primary text-white text-sm font-semibold">Case Study</span>;
+      case "website":
+        return <span className="px-4 py-1 rounded-full dark:bg-white dark:text-background bg-black text-white text-sm font-semibold">Website Live</span>;
+      case "gallery":
+        return <span className="px-4 py-1 rounded-full bg-blue-600 dark:bg-orange-600 text-white text-sm font-semibold">View Gallery</span>;
+      default:
+        return null;
+    }
+  };
   const handleToggle = () => {
     if (typeof window !== "undefined") {
       const html = document.documentElement;
@@ -247,9 +273,46 @@ export default function Home() {
       <FeaturedWork />
 
       {/* timeline */}
-      <section>
+      <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="w-full font-inter mt-32">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Section Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-7xl font-whyte font-bold mb-8"
+          >
+            Experience
+          </motion.h1>
 
-      </section>
+          {/* Table Header */}
+          <div className="grid grid-cols-3 text-sm font-bold text-foreground uppercase tracking-wide border-b pb-2 mb-4">
+            <span>Year</span>
+            <span>Projects</span>
+            <span className="justify-end flex"></span>
+          </div>
+
+          {/* Timeline Rows */}
+          <div className="divide-y divide-foreground/20">
+            {timeline.map((item, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-3 py-4 items-center text-foreground"
+              >
+                <span className="text-lg">{item.year}</span>
+                <span className="text-lg font-medium">{item.project}</span>
+                <div className="flex justify-end">{getButton(item.type)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
 
 
       {/* Footer */}
@@ -349,7 +412,7 @@ export default function Home() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition"
             >
               <>
                 {/* Light mode default: show dark icon */}
@@ -371,7 +434,7 @@ export default function Home() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition"
             >
               <>
                 {/* Light mode default: show dark icon */}
@@ -393,8 +456,7 @@ export default function Home() {
               href="https://behance.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
-            >
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 {/* Light mode default: show dark icon */}
                 <Image src="/behance_dark.svg" alt="Behance Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
@@ -415,8 +477,7 @@ export default function Home() {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-foreground transition"
-            >
+              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 {/* Light mode default: show dark icon */}
                 <Image src="/x_dark.svg" alt="Twitter Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
