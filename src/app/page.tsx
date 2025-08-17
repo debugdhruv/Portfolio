@@ -37,7 +37,7 @@ export default function Home() {
   });
 
   // TypingAnimation role cycling logic
-  const roles = ["& DEVELOPER", "& DESIGNER", "& CREATOR"];
+  const roles = ["& DEVELOPER", "& Thinker", "& CREATOR"];
   const [currentRoleIdx, setCurrentRoleIdx] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,41 +46,18 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [roles.length]);
 
-  useEffect(() => {
-    const btn = document.getElementById("backToTopBtn");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (btn) {
-            if (entry.isIntersecting) {
-              btn.classList.remove("hidden");
-            } else {
-              btn.classList.add("hidden");
-            }
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    const footer = document.querySelector("footer");
-    if (footer) observer.observe(footer);
-    return () => {
-      if (footer) observer.unobserve(footer);
-    };
-  }, []);
-
   return (
-    <main className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-40">
+    <main className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-28">
       {/* Hero Section */}
       <section className="relative max-w-5xl w-full mx-auto px-4 py-12">
         {/* Dot grid background (only inside hero section) */}
-        <Image
+        {/* <Image
           width="0"
           height="0"
           src="/dots.svg"
           alt="Background Dots"
           className="absolute inset-0 w-full h-full dark:opacity-25 object-cover pointer-events-none z-0"
-        />
+        /> */}
 
         <div className="relative z-10 flex flex-col items-start space-y-6">
           {/* Top line: Creative + gif */}
@@ -140,7 +117,7 @@ export default function Home() {
               alt="Finder"
               width={100}
               height={100}
-              className="w-12 sm:w-20 sm:h-20 absolute right-[-32px] bottom-[38px] sm:right-[-44px] sm:bottom-[82px] rotate-[10deg] z-10"
+              className="w-12 sm:w-20 sm:h-20 absolute right-[-32px] bottom-[4px] sm:right-[-44px] sm:bottom-[82px] rotate-[10deg] z-10"
             />
             {/* & DEVELOPER under DESIGNER */}
             <div className="w-full flex justify-end">
@@ -152,7 +129,6 @@ export default function Home() {
             </div>
           </div>
 
-
           {/* Final line: Open to job offers */}
           <div className="text-base sm:text-lg md:text-xl text-foreground font-medium mt-4 text-center w-full px-4">
             <span className="text-foreground font-bold">Open</span> to new job offers{" "}
@@ -161,8 +137,8 @@ export default function Home() {
         </div>
       </section>
       {/* lil intro */}
-      <section className="w-full max-w-4xl mx-auto px-4 mt-24">
-        <div className="font-inter font-semibold text-3xl sm:text-5xl flex justify-center items-center text-foreground">
+      <section className="w-full max-w-5xl mx-auto px-4 mt-24">
+        <div className="font-inter font-semibold text-3xl sm:text-5xl flex justify-center items-center text-justify text-foreground">
           <h1 className="leading-normal tracking-tight">
             Hi, I am{" "}
             <Image
@@ -223,62 +199,64 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="mt-48 w-full px-6 py-16 flex flex-col items-center justify-center text-center space-y-8 relative">
-
-        {/* Heading + Peace Icon */}
-        <div className="flex items-center justify-center space-x-4">
-          <h1 className="text-6xl md:text-8xl font-whyte">INTERESTED</h1>
-          <>
-            <Image
-              src="/peace_light.svg"
-              alt="Peace Light"
-              width={96}
-              height={96}
-              className="inline-block dark:hidden"
-            />
-            <Image
-              src="/peace_dark.svg"
-              alt="Peace Dark"
-              width={96}
-              height={96}
-              className="hidden dark:inline-block"
-            />
-          </>
-        </div>
-        <h1 className="text-6xl md:text-8xl font-whyte">IN WORKING TOGETHER?</h1>
-
-        {/* Contact Email with polygon cursor */}
-        <div className="text-center">
-          <p className="text-base sm:text-lg text-foreground">Contact me:</p>
-          <p className="text-lg sm:text-xl font-semibold text-foreground relative inline-block">
-            dhruvtiwari.1130@gmail.com
+      <footer className="min-h-screen w-full px-6 py-16 flex flex-col justify-end items-center text-center space-y-8 relative">
+        {/* Vertically centered main content */}
+        <div className="flex-grow flex flex-col justify-center items-center w-full">
+          {/* Heading + Peace Icon */}
+          <div className="flex items-baseline justify-center space-x-4">
+            <h1 className="text-5xl md:text-7xl font-whyte">INTERESTED</h1>
             <>
               <Image
-                src="/Polygon 1.svg"
-                alt="Cursor Polygon Light"
-                width={20}
-                height={20}
-                className="absolute -right-6 top-1/2 transform -translate-y-1/2 dark:hidden"
+                src="/peace_light.svg"
+                alt="Peace Light"
+                width={96}
+                height={96}
+                className="inline-block dark:hidden"
               />
               <Image
-                src="/Polygon 2.svg"
-                alt="Cursor Polygon Dark"
-                width={20}
-                height={20}
-                className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden dark:inline-block"
+                src="/peace_dark.svg"
+                alt="Peace Dark"
+                width={96}
+                height={96}
+                className="hidden dark:inline-block"
               />
             </>
-          </p>
+          </div>
+          <h1 className="text-5xl md:text-7xl mt-4 font-whyte">IN WORKING TOGETHER?</h1>
+
+          {/* Contact Email with polygon cursor */}
+          <div className="text-center mt-8">
+            <p className="text-base mb-1 sm:text-2xl font-semibold text-foreground">Connect with me:</p>
+            <p className="text-xl sm:text-2xl hover:text-primary font-bold text-foreground relative inline-block">
+              dhruvtiwari.1130@gmail.com
+              <>
+                <Image
+                  src="/Polygon 2.svg"
+                  alt="Cursor Polygon Light"
+                  width={50}
+                  height={50}
+                  className="absolute -right-4 -bottom-10 translate-x-6 translate-y-2 block dark:hidden animate-fly"
+                />
+                <Image
+                  src="/Polygon 1.svg"
+                  alt="Cursor Polygon Dark"
+                  width={50}
+                  height={50}
+                  className="absolute -right-4 -bottom-12 translate-x-6 translate-y-2 hidden dark:block animate-fly"
+                />
+              </>
+            </p>
+          </div>
         </div>
 
         {/* Bottom row: credits, socials, copyright */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between mt-12 text-sm text-muted-foreground space-y-4 md:space-y-0">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between mt-auto text-sm text-muted-foreground space-y-4 md:space-y-0">
 
           {/* Credits */}
-          <p className="text-left">
+          <p className="text-left text-foreground">
             Designed &amp; Developed by
             <br />
-            <span className="text-primary font-semibold">Dhruv Narayan Tiwari</span>
+            <span className="text-primary font-bold">Dhruv Narayan Tiwari</span>
           </p>
 
           {/* Social buttons */}
@@ -364,30 +342,41 @@ export default function Home() {
         {/* Back to top button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-foreground text-background flex items-center justify-center shadow-lg hover:scale-110 transition"
-          id="backToTopBtn">
-            <ArrowUp size={30}/>
+          className="absolute animate-fly-1 bottom-32 right-12 w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
+          <ArrowUp size={30} />
         </button>
       </footer>
 
+      {/* Flying animation */}
+      <style jsx global>{`
+        @keyframes fly {
+          0% {
+            transform: translateY(0) scale(1) rotate(4deg);
+          }
+          20% {
+            transform: translateY(-10px) scale(1.04) rotate(-2deg);
+          }
+          40% {
+            transform: translateY(5px) scale(0.98) rotate(2deg);
+          }
+          60% {
+            transform: translateY(-8px) scale(1.02) rotate(-1deg);
+          }
+          80% {
+            transform: translateY(4px) scale(1.01) rotate(1deg);
+          }
+          100% {
+            transform: translateY(0) scale(1) rotate(0deg);
+          }
+        }
+        .animate-fly {
+          animation: fly 3.2s ease-in-out infinite;
+        }
+        
+        .animate-fly-1 {
+          animation: fly 10s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   );
 }
-
-
-
-
-
-{/* <section className="mt-96 flex flex-col items-center justify-center text-center space-y-4">
-        <div className="flex items-center justify-center space-x-4">
-          <h1 className="text-6xl md:text-8xl font-whyte">INTERESTED</h1>
-          <Image
-            src="/peace_light.svg"
-            alt="hi"
-            width={96}
-            height={96}
-            className="absolute right-[396px] bottom-[136px]"
-          />
-        </div>
-        <h1 className="text-6xl md:text-8xl font-whyte">IN WORKING TOGETHER?</h1>
-      </section> */}

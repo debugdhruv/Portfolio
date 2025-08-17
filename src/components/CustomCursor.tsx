@@ -44,8 +44,8 @@ const CustomCursor = () => {
     <motion.div
       className="pointer-events-none fixed top-0 left-0 z-[9999] flex items-center justify-center"
       animate={{
-        x: position.x,
-        y: position.y,
+        x: position.x -8,
+        y: position.y -10,
       }}
     >
       <div className="relative h-full w-full">
