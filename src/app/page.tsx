@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUp } from 'lucide-react';
 import { motion } from "framer-motion";
+import FeaturedWork from "@/components/FeaturedWork";
 
 declare global {
   interface Window {
@@ -215,28 +216,35 @@ export default function Home() {
         </div>
       </section>
       {/* skills */}
-      <section className="flex justify-center items-center mt-14">
-        <Image
-              src="/skills_light.svg"
-              alt="Skills"
-              width={1200}
-              height={1200}
-              className="block dark:hidden"
-            />
-            <Image
-              src="/skills_dark.svg"
-              alt="Skills Dark"
-              width={1200}
-              height={1200}
-              className="hidden dark:block"
-            />
+      <section className="flex justify-center items-center mt-28">
+        <div className="flex flex-col text-left w-full max-w-6xl px-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="font-inter text-2xl font-semibold">
+            with my skills in:
+          </motion.h1>
+          <Image
+            src="/skills_light.svg"
+            alt="Skills"
+            width={1200}
+            height={1200}
+            className="block dark:hidden"
+          />
+          <Image
+            src="/skills_dark.svg"
+            alt="Skills Dark"
+            width={1200}
+            height={1200}
+            className="hidden dark:block"
+          />
+        </div>
       </section>
-
 
       {/* Featured Work */}
-      <section>
-
-      </section>
+      <FeaturedWork />
 
       {/* timeline */}
       <section>

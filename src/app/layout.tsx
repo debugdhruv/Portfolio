@@ -6,6 +6,7 @@ import ProgressBar from "@/components/ProgressBar";
 import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScroll";
+import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.vercel.app"),
@@ -94,7 +95,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ProgressBar/>
         <CustomCursor />
         <NavBar />
+        <ClientRoot>
         {children}
+        </ClientRoot>
       </body>
     </html>
   );
