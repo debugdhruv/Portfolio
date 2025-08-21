@@ -1,6 +1,7 @@
 "use client";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUp } from 'lucide-react';
 import { motion } from "framer-motion";
@@ -14,31 +15,72 @@ declare global {
     year: string;
     project: string;
     type: "case" | "website" | "gallery";
+    link: string;
+    external?: boolean;
   }
 }
+
 const timeline: TimelineItem[] = [
-  { year: "2025", project: "DevRipples Landing Page Redesign", type: "case" },
-  { year: "2025", project: "The Brain Room", type: "website" },
-  { year: "2024", project: "UI/UX Design Lead - GDSC", type: "gallery" },
-  { year: "2023 - 24", project: "Vyapari Sang", type: "case" },
-  { year: "2023", project: "Xeonic", type: "case" },
-  { year: "2023", project: "IRCTC App Redesign", type: "case" },
-  { year: "2022", project: "Macros App Redesign", type: "case" },
+  { year: "2025", project: "DevRipples Landing Page Redesign", type: "case", link: "#", external: false },
+  { year: "2025", project: "The Brain Room", type: "website", link: "#", external: true },
+  { year: "2024", project: "UI/UX Design Lead - GDSC", type: "gallery", link: "#", external: false },
+  { year: "2023 - 24", project: "Vyapari Sang", type: "case", link: "#", external: false },
+  { year: "2023", project: "Xeonic", type: "case", link: "#", external: false },
+  { year: "2023", project: "IRCTC App Redesign", type: "case", link: "#", external: false },
+  { year: "2022", project: "Macros App Redesign", type: "case", link: "#", external: false },
 ];
 
 export default function Home() {
-  const getButton = (type: TimelineItem["type"]) => {
-    switch (type) {
-      case "case":
-        return <span className="px-4 py-1 rounded-full bg-primary text-white text-sm font-semibold">Case Study</span>;
-      case "website":
-        return <span className="px-4 py-1 rounded-full dark:bg-white dark:text-background bg-black text-white text-sm font-semibold">Website Live</span>;
-      case "gallery":
-        return <span className="px-4 py-1 rounded-full bg-blue-600 dark:bg-orange-600 text-white text-sm font-semibold">View Gallery</span>;
-      default:
-        return null;
+  const getButton = (item: TimelineItem) => {
+    const { type, link, external } = item;
+
+    const buttonContent = () => {
+      switch (type) {
+        case "case":
+          return (
+            <span className="px-4 py-1 rounded-full bg-primary text-white dark:bg-white dark:text-black text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+              Case Study
+            </span>
+          );
+        case "website":
+          return (
+            <span className="px-4 py-1 rounded-full dark:bg-white dark:text-background bg-black text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+              Website Live
+            </span>
+          );
+        case "gallery":
+          return (
+            <span className="px-4 py-1 rounded-full bg-blue-600 dark:bg-orange-600 text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+              View Gallery
+            </span>
+          );
+        default:
+          return null;
+      }
+    };
+
+    if (external) {
+      return (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block hover:opacity-80 transition-opacity duration-300"
+        >
+          {buttonContent()}
+        </a>
+      );
+    } else {
+      return (
+        <Link
+          href={link}
+          className="inline-block hover:opacity-80 transition-opacity duration-300">
+          {buttonContent()}
+        </Link>
+      );
     }
   };
+
   const handleToggle = () => {
     if (typeof window !== "undefined") {
       const html = document.documentElement;
@@ -273,12 +315,12 @@ export default function Home() {
       <FeaturedWork />
 
       {/* timeline */}
-      <motion.section 
-      initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="w-full font-inter mt-32">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="w-full font-inter mt-32">
         <div className="max-w-7xl mx-auto px-4">
           {/* Section Title */}
           <motion.h1
@@ -299,21 +341,24 @@ export default function Home() {
           </div>
 
           {/* Timeline Rows */}
-          <div className="divide-y divide-foreground/20">
+          <div className="divide-y divide-foreground/10">
             {timeline.map((item, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="grid grid-cols-3 py-4 items-center text-foreground"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-3 py-4 items-center text-foreground hover:bg-foreground/5 transition-colors duration-300 px-2"
               >
                 <span className="text-lg">{item.year}</span>
                 <span className="text-lg font-medium">{item.project}</span>
-                <div className="flex justify-end">{getButton(item.type)}</div>
-              </div>
+                <div className="flex justify-end">{getButton(item)}</div>
+              </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
-
 
       {/* Footer */}
       <footer className="min-h-screen w-full px-6 py-16 flex flex-col justify-end items-center text-center space-y-8 relative">
@@ -326,7 +371,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-whyte">INTERESTED</ motion.h1>
+              className="text-5xl md:text-7xl font-whyte">INTERESTED</motion.h1>
             <>
               <Image
                 src="/peace_light.svg"
