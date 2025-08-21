@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
-import Preloader from "@/components/PreLoader";
+// import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
@@ -35,8 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#081417" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#FFFBF2" media="(prefers-color-scheme: light)" />
         <script
-  dangerouslySetInnerHTML={{
-    __html: `
+          dangerouslySetInnerHTML={{
+            __html: `
       (function () {
         window.updateFavicon = function () {
           const darkMode = document.documentElement.classList.contains("dark");
@@ -54,8 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', window.updateFavicon);
       })();
     `
-  }}
-/>
+          }}
+        />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dhruv Tiwari — Product Designer & Frontend Developer" />
@@ -90,13 +90,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        <SmoothScroll/>
-        <Preloader/>
-        <ProgressBar/>
-        <CustomCursor />
-        <NavBar />
+        {/* <Preloader /> */}
         <ClientRoot>
-        {children}
+          <SmoothScroll />
+          <ProgressBar />
+          <CustomCursor />
+          <NavBar />
+          {children}
         </ClientRoot>
       </body>
     </html>

@@ -17,13 +17,13 @@ declare global {
   }
 }
 const timeline: TimelineItem[] = [
-  { year: "2021 - 2024", project: "Vyapari Sang", type: "case" },
+  { year: "2025", project: "DevRipples Landing Page Redesign", type: "case" },
+  { year: "2025", project: "The Brain Room", type: "website" },
+  { year: "2024", project: "UI/UX Design Lead - GDSC", type: "gallery" },
+  { year: "2023 - 24", project: "Vyapari Sang", type: "case" },
   { year: "2023", project: "Xeonic", type: "case" },
-  { year: "2023", project: "UI/UX Design Lead - GDSC", type: "website" },
-  { year: "2022", project: "Worktruit Landing Page", type: "gallery" },
-  { year: "2023", project: "DEET Website Revamp", type: "case" },
-  { year: "2023", project: "AI Resume Builder", type: "website" },
-  { year: "2022", project: "Worktruit Landing Page", type: "gallery" },
+  { year: "2023", project: "IRCTC App Redesign", type: "case" },
+  { year: "2022", project: "Macros App Redesign", type: "case" },
 ];
 
 export default function Home() {
@@ -409,7 +409,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              href="https://instagram.com"
+              href="https://instagram.com/dhruv_the_el_pee_da"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition"
@@ -431,7 +431,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/dhruvux"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition"
@@ -453,7 +453,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              href="https://behance.net"
+              href="https://www.behance.net/dhruvui"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
@@ -474,7 +474,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              href="https://twitter.com"
+              href="https://x.com/dhruv_is_here"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
