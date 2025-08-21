@@ -4,7 +4,7 @@ import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 // import Preloader from "@/components/PreLoader";
-import CustomCursor from "@/components/CustomCursor";
+// import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
 
@@ -94,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClientRoot>
           <SmoothScroll />
           <ProgressBar />
-          <CustomCursor />
+          {/* <CustomCursor /> */}
           <NavBar />
           {children}
         </ClientRoot>
