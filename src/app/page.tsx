@@ -17,9 +17,9 @@ declare global {
   }
 }
 const timeline: TimelineItem[] = [
-  { year: "2021 - 2024", project: "Talent Linker", type: "case" },
-  { year: "2023", project: "DEET Website Revamp", type: "case" },
-  { year: "2023", project: "AI Resume Builder", type: "website" },
+  { year: "2021 - 2024", project: "Vyapari Sang", type: "case" },
+  { year: "2023", project: "Xeonic", type: "case" },
+  { year: "2023", project: "UI/UX Design Lead - GDSC", type: "website" },
   { year: "2022", project: "Worktruit Landing Page", type: "gallery" },
   { year: "2023", project: "DEET Website Revamp", type: "case" },
   { year: "2023", project: "AI Resume Builder", type: "website" },
