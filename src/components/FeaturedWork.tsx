@@ -22,7 +22,7 @@ const FeaturedWork: React.FC = () => {
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '6 min Read',
             image: '/phd_1.jpg',
-            caseStudy: 'Case Study 04',
+            caseStudy: 'Case Study 01',
             viewProject: true
         },
         {
@@ -41,7 +41,7 @@ const FeaturedWork: React.FC = () => {
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '8 min Read',
             image: '/phd_3.jpg',
-            caseStudy: 'Case Study 02'
+            caseStudy: 'Case Study 03'
         },
         {
             id: '4',
@@ -104,10 +104,10 @@ const FeaturedWork: React.FC = () => {
                         {project.tags.map((tag, index) => (
                             <React.Fragment key={index}>
                                 <span className="text-sm text-white/90 flex items-center">
-                                    <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
+                                    <span className="w-1.5 h-1.5 bg-white rounded-full mx-1"></span>
                                     {tag}
                                 </span>
-                                {index < project.tags.length - 1 && <span className="text-white/60 mx-2">●</span>}
+                                {/* {index < project.tags.length - 1 && <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>} */}
                             </React.Fragment>
                         ))}
                     </div>
