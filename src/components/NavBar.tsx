@@ -50,7 +50,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                href="/resume"
+                href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing" target="blank"
                 className={`${pathname === "/resume" ? "text-primary font-bold" : ""} hover:text-primary`}
               >
                 Resume

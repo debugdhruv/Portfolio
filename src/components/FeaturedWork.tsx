@@ -21,7 +21,7 @@ const FeaturedWork: React.FC = () => {
             description: 'expected to serve 1M Active Users in the US Market',
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '6 min Read',
-            image: '/phd_1.jpg',
+            image: '/phd_1.png',
             caseStudy: 'Case Study 01',
             viewProject: true
         },
