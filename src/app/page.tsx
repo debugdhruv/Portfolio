@@ -623,13 +623,6 @@
 // }
 
 
-
-
-
-
-
-
-
 "use client";
 import NavBar from "@/components/NavBar"; // adjust path if needed
 import { AnimatePresence } from "framer-motion";
@@ -648,20 +641,18 @@ declare global {
   interface TimelineItem {
     year: string;
     project: string;
-    type: "case" | "website" | "gallery";
+    type: string;
     link: string;
     external?: boolean;
   }
 }
 
 const timeline: TimelineItem[] = [
-  { year: "2025", project: "DevRipples Landing Page Redesign", type: "case", link: "#", external: false },
-  { year: "2025", project: "The Brain Room", type: "website", link: "#", external: true },
-  { year: "2024", project: "UI/UX Design Lead - GDSC", type: "gallery", link: "#", external: false },
-  { year: "2023 - 24", project: "Vyapari Sang", type: "case", link: "#", external: false },
-  { year: "2023", project: "Xeonic", type: "case", link: "#", external: false },
-  { year: "2023", project: "IRCTC App Redesign", type: "case", link: "#", external: false },
-  { year: "2022", project: "Macros App Redesign", type: "case", link: "#", external: false },
+  { year: "2022-Present", project: "Various Startups & Clients", type: "Freelancer", link: "#", external: false },
+  { year: "2025", project: "Dev Ripples", type: "Product Design Lead", link: "#", external: false },
+  { year: "2024", project: "Xeonic", type: "UI/UX Designer", link: "#", external: false },
+  { year: "2023", project: "Vyapari Sang", type: "Product Designer", link: "#", external: false },
+  { year: "2023", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: "#", external: false },
 ];
 
 export default function Home() {
@@ -987,50 +978,88 @@ export default function Home() {
       <FeaturedWork />
 
       {/* timeline */}
-      <motion.section
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="w-full font-inter mt-32">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Section Title */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-7xl font-whyte font-bold mb-8"
-          >
-            Experience
-          </motion.h1>
+      {/* Timeline Section */}
+<motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="w-full font-inter mt-32"
+>
+  <div className="max-w-7xl mx-auto px-4">
+    {/* Section Title */}
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="text-7xl font-whyte font-bold mb-8"
+    >
+      Experience
+    </motion.h1>
 
-          {/* Table Header */}
-          <div className="grid grid-cols-3 text-sm font-bold text-foreground uppercase tracking-wide border-b pb-2 mb-4">
-            <span>Year</span>
-            <span>Projects</span>
-            <span className="justify-end flex"></span>
-          </div>
+    {/* Table Header */}
+    <div className="grid grid-cols-3 text-sm font-bold text-foreground uppercase tracking-wide border-b pb-2 mb-4">
+      <span>Year</span>
+      <span>Company</span>
+      <span className="justify-end flex">Designation</span>
+    </div>
 
-          {/* Timeline Rows */}
-          <div className="divide-y divide-foreground/10">
-            {timeline.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="grid grid-cols-3 py-4 items-center text-foreground hover:bg-foreground/5 transition-colors duration-300 px-2"
-              >
-                <span className="text-lg">{item.year}</span>
-                <span className="text-lg font-medium">{item.project}</span>
-                <div className="flex justify-end">{getButton(item)}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+    {/* Timeline Rows */}
+    <div className="divide-y divide-foreground/10">
+      {timeline.map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-3 py-4 items-center text-foreground hover:bg-foreground/5 transition-colors duration-300 px-2"
+        >
+          <span className="text-lg">{item.year}</span>
+          <span className="text-lg font-medium">{item.project}</span>
+          <div className="flex justify-end">{getButton(item)}</div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.section>
+
+{/* Experience Section (just list, no grid)
+<motion.section
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="w-full font-inter mt-20"
+>
+  <div className="max-w-7xl mx-auto px-4">
+    <motion.h1
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="text-7xl font-whyte font-bold mb-8"
+    >
+      Experience
+    </motion.h1>
+
+    <ul className="space-y-4 text-lg font-medium text-foreground">
+      {timeline.map((item, i) => (
+        <motion.li
+          key={i}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
+          viewport={{ once: true }}
+        >
+          {item.year} — {item.project}
+        </motion.li>
+      ))}
+    </ul>
+  </div>
+</motion.section> */}
+
 
       {/* Footer */}
       <footer id="footer" className="min-h-screen w-full px-6 py-16 flex flex-col justify-end items-center text-center space-y-8 relative">

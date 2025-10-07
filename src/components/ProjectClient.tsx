@@ -2,12 +2,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import NavBar from "@/components/NavBar"; 
+import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function ProjectClient({ projects }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -21,7 +26,10 @@ export default function ProjectClient({ projects }) {
   }, []);
 
   return (
-    <section className={`m-auto p-24 ${inter.className}`}>
+        <>
+    <NavBar onMenuToggle={setMenuOpen} />
+
+    <section className={`m-auto px-14 pt-24 ${inter.className}`}>
       <div className="flex flex-col gap-4">
         <div className="w-full">
           <div className="flex items-center gap-4">
@@ -121,5 +129,32 @@ export default function ProjectClient({ projects }) {
         )}
       </div>
     </section>
+    {/* ✅ Animated Mobile Menu Overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  exit={{ opacity: 0, y: 50, scale: 0.95 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="fixed bottom-14 left-28 right-28 z-[100] bg-background/10 backdrop-blur-lg border border-foreground/10 shadow-lg rounded-3xl px-8 py-6 flex flex-col items-center space-y-5 w-[50%] max-w-sm">
+
+            <Link href="/about" className="text-lg font-semibold hover:text-primary">About</Link>
+            <Link href="/projects" className="text-lg font-semibold hover:text-primary">Projects</Link>
+            <Link
+              href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold hover:text-primary"
+            >
+              Resume
+            </Link>
+            <Link href="#footer" className="text-lg font-semibold hover:text-primary">
+              Contact
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

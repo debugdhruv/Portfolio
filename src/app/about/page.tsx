@@ -1,11 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import NavBar from "@/components/NavBar"; 
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Instagram, Linkedin, ExternalLink } from 'lucide-react';
 
 export default function About() {
+    const [menuOpen, setMenuOpen] = useState(false);
   return (
+        <>
+    <NavBar onMenuToggle={setMenuOpen} />
+
     <motion.main
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +77,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold text-foreground leading-tight"
+                className="text-4xl text-gray-500 md:text-5xl lg:text-6xl font-inter font-bold text-foreground leading-tight"
               >
                 in CSE,
               </motion.h3>
@@ -80,7 +88,7 @@ export default function About() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl lg:text-6xl font-inter font-bold text-foreground leading-tight"
               >
-                part-time Developer
+               part-time Developer
               </motion.h4>
             </div>
 
@@ -326,5 +334,32 @@ export default function About() {
         </div>
       </motion.footer>
     </motion.main>
+    {/* ✅ Animated Mobile Menu Overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  exit={{ opacity: 0, y: 50, scale: 0.95 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="fixed bottom-14 left-28 right-28 z-[100] bg-background/10 backdrop-blur-lg border border-foreground/10 shadow-lg rounded-3xl px-8 py-6 flex flex-col items-center space-y-5 w-[50%] max-w-sm">
+
+            <Link href="/about" className="text-lg font-semibold hover:text-primary">About</Link>
+            <Link href="/projects" className="text-lg font-semibold hover:text-primary">Projects</Link>
+            <Link
+              href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold hover:text-primary"
+            >
+              Resume
+            </Link>
+            <Link href="#footer" className="text-lg font-semibold hover:text-primary">
+              Contact
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

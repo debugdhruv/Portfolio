@@ -9,7 +9,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dhruvux.vercel.app"),
+  metadataBase: new URL("https://dhruvux.dev"),
   title: "Dhruv — Product Designer & Developer",
   description: "Portfolio of Dhruv Narayan Tiwari, showcasing design and development work.",
   openGraph: {
@@ -25,9 +25,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta property="og:title" content="Dhruv Tiwari — Product Designer & Developer" />
         <meta property="og:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing design and development work." />
-        <meta property="og:image" content="https://dhruvux.vercel.app/og-image.png" />
+        <meta property="og:image" content="https://dhruvux.dev/og-image.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dhruvux.vercel.app" />
+        <meta property="og:url" content="https://dhruvux.dev" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dhruv Narayan Tiwari" />
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dhruv Tiwari — Product Designer & Frontend Developer" />
         <meta name="twitter:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing modern product design and frontend development." />
-        <meta name="twitter:image" content="https://dhruvux.vercel.app/og-image.png" />
+        <meta name="twitter:image" content="https://dhruvux.dev/og-image.png" />
         <meta name="twitter:creator" content="@yourTwitterHandle" />
         {/* Mobile Optimization */}
         <meta name="apple-mobile-web-app-title" content="Dhruv Tiwari" />
@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Dhruv Narayan Tiwari",
-              url: "https://dhruvux.vercel.app",
+              url: "https://dhruvux.dev",
               sameAs: [
                 "https://www.linkedin.com/in/dhruvux",
                 "https://github.com/debugdhruv"
