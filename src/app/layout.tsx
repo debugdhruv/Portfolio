@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
-// import Preloader from "@/components/PreLoader";
-// import CustomCursor from "@/components/CustomCursor";
-import SmoothScroll from "@/components/SmoothScroll";
+import Preloader from "@/components/PreLoader";
+import CustomCursor from "@/components/CustomCursor";
+// import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
@@ -90,11 +90,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        {/* <Preloader /> */}
+        <Preloader />
         <ClientRoot>
-          <SmoothScroll />
+          {/* <SmoothScroll /> */}
           <ProgressBar />
-          {/* <CustomCursor /> */}
+          <CustomCursor />
           <NavBar />
           {children}
         </ClientRoot>

@@ -17,10 +17,10 @@ const FeaturedWork: React.FC = () => {
     const projects: ProjectCard[] = [
         {
             id: '1',
-            title: 'Talent Linker: A job Search Platform',
-            description: 'expected to serve 1M Active Users in the US Market',
-            tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
-            readTime: '6 min Read',
+            title: 'Vyapari Sang: Connecting businesses',
+            description: 'Empower SMEs to penetrate new markets by connecting with distributors and super stockists across regions.',
+            tags: ['Mobile'],
+            readTime: '10 min Read',
             image: '/phd_1.png',
             caseStudy: 'Case Study 01',
             viewProject: true
@@ -31,7 +31,7 @@ const FeaturedWork: React.FC = () => {
             description: '',
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '8 min Read',
-            image: '/phd_2.jpg',
+            image: '/phd_2.png',
             caseStudy: 'Case Study 02'
         },
         {
@@ -40,7 +40,7 @@ const FeaturedWork: React.FC = () => {
             description: '',
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '8 min Read',
-            image: '/phd_3.jpg',
+            image: '/phd_3.png',
             caseStudy: 'Case Study 03'
         },
         {
@@ -49,7 +49,7 @@ const FeaturedWork: React.FC = () => {
             description: 'expected to serve 1M Active Users in the US Market',
             tags: ['Mobile', 'Web', 'Expected to be 1M MAU'],
             readTime: '6 min Read',
-            image: '/phd_4.jpg',
+            image: '/phd_4.png',
             caseStudy: 'Case Study 04',
             viewProject: true
         }
