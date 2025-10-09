@@ -484,7 +484,8 @@ interface ProjectCard {
   image: string;
   caseStudy?: string;
   viewProject?: boolean;
-  behanceLink: string; // ✨ ADDED: Link for the case study
+  behanceLink: string;
+  grad?: boolean;
 }
 
 const FeaturedWork: React.FC = () => {
@@ -496,8 +497,9 @@ const FeaturedWork: React.FC = () => {
       image: '/phd_1.png',
       caseStudy: 'Case Study 01',
       viewProject: true,
-      // ✨ ADDED: Replace with your actual Behance URL
-      behanceLink: 'https://www.behance.net/gallery/236124553/Vyapari-Sang'
+      behanceLink: 'https://www.behance.net/gallery/236124553/Vyapari-Sang',
+      grad: false,
+
     },
     {
       id: '2',
@@ -505,8 +507,9 @@ const FeaturedWork: React.FC = () => {
       readTime: '8 min Read',
       image: '/phd_2.png',
       caseStudy: 'Case Study 02',
-      // ✨ ADDED: Replace with your actual Behance URL
-      behanceLink: 'https://www.behance.net/gallery/205515587/Xeonic'
+      behanceLink: 'https://www.behance.net/gallery/205515587/Xeonic',
+      grad: false,
+
     },
     {
       id: '3',
@@ -514,8 +517,8 @@ const FeaturedWork: React.FC = () => {
       readTime: '5 min Read',
       image: '/phd_3.png',
       caseStudy: 'Case Study 03',
-      // ✨ ADDED: Replace with your actual Behance URL
-      behanceLink: 'https://www.behance.net/gallery/218717433/Macros-Food-Tracker-App-(UI-UX-Redesign)'
+      behanceLink: 'https://www.behance.net/gallery/218717433/Macros-Food-Tracker-App-(UI-UX-Redesign)',
+      grad: true,
     },
     {
       id: '4',
@@ -524,8 +527,9 @@ const FeaturedWork: React.FC = () => {
       image: '/phd_4.png',
       caseStudy: 'Case Study 04',
       viewProject: true,
-      // ✨ ADDED: Replace with your actual Behance URL
-      behanceLink: 'https://www.behance.net/gallery/218713471/IRCTC-App-Redesign'
+      behanceLink: 'https://www.behance.net/gallery/218713471/IRCTC-App-Redesign',
+      grad: false,
+
     }
   ];
 
@@ -547,7 +551,7 @@ const FeaturedWork: React.FC = () => {
   );
 
   const ProjectCardComponent = ({ project, isFullWidth }: { project: ProjectCard; isFullWidth: boolean }) => (
-    // ✨ CHANGED: Replaced div with an <a> tag to make the whole card a clickable link.
+
     <a
       href={project.behanceLink}
       target="_blank"
@@ -560,7 +564,7 @@ const FeaturedWork: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
         style={{ backgroundImage: `url(${project.image})` }}>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className={`absolute inset-0 ${project.grad ?`bg-gradient-to-t from-black/80 via-black/20 to-transparent` :''}`}  />
       </div>
 
       {/* Read Time Bar */}

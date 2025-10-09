@@ -642,70 +642,71 @@ declare global {
     year: string;
     project: string;
     type: string;
-    link: string;
+    link?: boolean;
     external?: boolean;
   }
 }
 
 const timeline: TimelineItem[] = [
-  { year: "2022-Present", project: "Various Startups & Clients", type: "Freelancer", link: "#", external: false },
-  { year: "2025", project: "Dev Ripples", type: "Product Design Lead", link: "#", external: false },
-  { year: "2024", project: "Xeonic", type: "UI/UX Designer", link: "#", external: false },
-  { year: "2023", project: "Vyapari Sang", type: "Product Designer", link: "#", external: false },
-  { year: "2023", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: "#", external: false },
+  { year: "2022 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
+  { year: "Aug 2025 - Present", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
+  { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
+  { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
+  { year: "Sept 2023 - 2024", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: false, external: false },
+  { year: "Feb 2020 - 2022", project: "Graphic Design & Content Writing", type: "Fiverr Freelancer", link: false, external: false },
 ];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const getButton = (item: TimelineItem) => {
-    const { type, link, external } = item;
+  // const getButton = (item: TimelineItem) => {
+  //   const { type, link, external } = item;
 
-    const buttonContent = () => {
-      switch (type) {
-        case "case":
-          return (
-            <span className="px-4 py-1 rounded-full bg-primary text-white dark:bg-white dark:text-black text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
-              Case Study
-            </span>
-          );
-        case "website":
-          return (
-            <span className="px-4 py-1 rounded-full dark:bg-white dark:text-background bg-black text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
-              Website Live
-            </span>
-          );
-        case "gallery":
-          return (
-            <span className="px-4 py-1 rounded-full bg-blue-600 dark:bg-orange-600 text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
-              View Gallery
-            </span>
-          );
-        default:
-          return null;
-      }
-    };
+  //   const buttonContent = () => {
+  //     switch (type) {
+  //       case "case":
+  //         return (
+  //           <span className="px-4 py-1 rounded-full bg-primary text-white dark:bg-white dark:text-black text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+  //             Case Study
+  //           </span>
+  //         );
+  //       case "website":
+  //         return (
+  //           <span className="px-4 py-1 rounded-full dark:bg-white dark:text-background bg-black text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+  //             Website Live
+  //           </span>
+  //         );
+  //       case "gallery":
+  //         return (
+  //           <span className="px-4 py-1 rounded-full bg-blue-600 dark:bg-orange-600 text-white text-sm font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+  //             View Gallery
+  //           </span>
+  //         );
+  //       default:
+  //         return null;
+  //     }
+  //   };
 
-    if (external) {
-      return (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block hover:opacity-80 transition-opacity duration-300"
-        >
-          {buttonContent()}
-        </a>
-      );
-    } else {
-      return (
-        <Link
-          href={link}
-          className="inline-block hover:opacity-80 transition-opacity duration-300">
-          {buttonContent()}
-        </Link>
-      );
-    }
-  };
+  //   if (external) {
+  //     return (
+  //       <a
+  //         href={link}
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //         className="inline-block hover:opacity-80 transition-opacity duration-300"
+  //       >
+  //         {buttonContent()}
+  //       </a>
+  //     );
+  //   } else {
+  //     return (
+  //       <Link
+  //         href={link}
+  //         className="inline-block hover:opacity-80 transition-opacity duration-300">
+  //         {buttonContent()}
+  //       </Link>
+  //     );
+  //   }
+  // };
 
   const handleToggle = () => {
     if (typeof window !== "undefined") {
@@ -978,7 +979,7 @@ export default function Home() {
       <FeaturedWork />
 
       {/* timeline */}
-      {/* Timeline Section */}
+{/* Timeline Section */}
 <motion.section
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -993,17 +994,9 @@ export default function Home() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="text-7xl font-whyte font-bold mb-8"
-    >
+      className="text-7xl font-whyte font-bold mb-8">
       Experience
     </motion.h1>
-
-    {/* Table Header */}
-    <div className="grid grid-cols-3 text-sm font-bold text-foreground uppercase tracking-wide border-b pb-2 mb-4">
-      <span>Year</span>
-      <span>Company</span>
-      <span className="justify-end flex">Designation</span>
-    </div>
 
     {/* Timeline Rows */}
     <div className="divide-y divide-foreground/10">
@@ -1014,11 +1007,16 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-3 py-4 items-center text-foreground hover:bg-foreground/5 transition-colors duration-300 px-2"
+          // ✅ MODIFIED LINE: Added a conditional class using a template literal
+          className={`grid grid-cols-3 py-4 items-center text-foreground hover:bg-foreground/15 transition-colors duration-300 px-2 ${
+            item.link ? 'bg-foreground/5 dark:bg-neutral-800/50' : ''
+          }`}
         >
           <span className="text-lg">{item.year}</span>
           <span className="text-lg font-medium">{item.project}</span>
-          <div className="flex justify-end">{getButton(item)}</div>
+          <div className="flex justify-end">
+            <span className="text-lg">{item.type}</span>
+          </div>
         </motion.div>
       ))}
     </div>
@@ -1243,14 +1241,14 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="hover:text-primary">© 2024 - All Rights Reserved</motion.p>
+            className="hover:text-primary">© 2025 - All Rights Reserved</motion.p>
         </div>
 
         {/* Back to top button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="absolute animate-fly-1 bottom-32 right-12 w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
-          <ArrowUp size={30} />
+          className="absolute animate-fly-1 bottom-32 right-12 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
+          <ArrowUp size={24} />
         </button>
       </footer>
 
@@ -1281,7 +1279,7 @@ export default function Home() {
         }
         
         .animate-fly-1 {
-          animation: fly 10s ease-in-out infinite;
+          animation: fly 15s ease-in-out infinite;
         }
       `}</style>
     </motion.main>

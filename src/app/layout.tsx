@@ -2,10 +2,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
-import ProgressBar from "@/components/ProgressBar";
-// import Preloader from "@/components/PreLoader";
-import CustomCursor from "@/components/CustomCursor";
-// import SmoothScroll from "@/components/SmoothScroll";
+// import ProgressBar from "@/components/ProgressBar";
+// // import Preloader from "@/components/PreLoader";
+// import CustomCursor from "@/components/CustomCursor";
+// // import SmoothScroll from "@/components/SmoothScroll";
 // import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
@@ -93,8 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <Preloader /> */}
         {/* <ClientRoot> */}
           {/* <SmoothScroll /> */}
-          <ProgressBar />
-          <CustomCursor />
+          {/* <ProgressBar /> */}
+          {/* <CustomCursor /> */}
           <NavBar />
           {children}
         {/* </ClientRoot> */}
