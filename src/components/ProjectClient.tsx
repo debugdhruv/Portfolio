@@ -34,7 +34,7 @@ export default function ProjectClient({ projects }) {
         <div className="w-full">
           <div className="flex items-center gap-4">
             <h1 className="font-extrabold text-4xl text-slate-950 dark:text-white leading-tight">
-              Projects.
+              Projects
             </h1>
           </div>
         </div>
