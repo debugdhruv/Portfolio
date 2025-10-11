@@ -1615,9 +1615,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className={`py-6 sm:py-8 hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors duration-300 px-3 sm:px-4 ${
-                  item.link ? 'bg-gray-50 dark:bg-gray-900/30' : ''
-                }`}>
+                className={`py-6 sm:py-8 hover:bg-black/15 dark:hover:bg-gray-900/50 transition-colors duration-300 px-3 sm:px-4`}>
+                  {/* ${
+                  item.link ? 'bg-black/20 dark:bg-gray-900/30' : ''
+                } */}
                 
                 {/* Mobile Layout - Stack vertically */}
                 <div className="flex flex-col gap-2 sm:hidden">
@@ -1661,21 +1662,21 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-5xl md:text-7xl font-whyte">INTERESTED</motion.h1>
+              className="text-2xl sm:text-5xl md:text-7xl font-whyte">INTERESTED</motion.h1>
             <>
               <Image
                 src="/peace_light.svg"
                 alt="Peace Light"
-                width={96}
-                height={96}
-                className="inline-block dark:hidden"
+                width={44}
+                height={44}
+                className="sm:w-32 inline-block dark:hidden"
               />
               <Image
                 src="/peace_dark.svg"
                 alt="Peace Dark"
-                width={96}
-                height={96}
-                className="hidden dark:inline-block"
+                width={44}
+                height={44}
+                className="sm:w-32 hidden dark:inline-block"
               />
             </>
           </div>
@@ -1684,7 +1685,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-5xl md:text-7xl mt-4 font-whyte">IN WORKING TOGETHER?</motion.h1>
+            className="text-2xl sm:text-5xl md:text-7xl mt-1 sm:mt-4 font-whyte">IN WORKING TOGETHER?</motion.h1>
 
           <div className="text-center mt-8">
             <motion.p
@@ -1813,7 +1814,7 @@ export default function Home() {
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="absolute animate-fly-1 bottom-32 right-12 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
+          className="absolute sm:animate-fly-1 sm:bottom-32 bottom-14 right-0 sm:right-12 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
           <ArrowUp size={24} />
         </button>
       </footer>

@@ -7,8 +7,18 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to true to avoid flash
 
   useEffect(() => {
+    // Check if device has a fine pointer (mouse/trackpad)
+    const checkMobile = () => {
+      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+      setIsMobile(!hasFinePointer || hasCoarsePointer);
+    };
+
+    checkMobile();
+
     const move = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -40,12 +50,15 @@ const CustomCursor = () => {
     };
   }, []);
 
+  // Don't render on mobile devices
+  if (isMobile) return null;
+
   return (
     <motion.div
       className="pointer-events-none fixed top-0 left-0 z-[9999] flex items-center justify-center"
       animate={{
-        x: position.x -8,
-        y: position.y -10,
+        x: position.x - 8,
+        y: position.y - 10,
       }}
     >
       <div className="relative h-full w-full">
@@ -57,7 +70,8 @@ const CustomCursor = () => {
             scale: isClicking ? 1 : isPointer ? 2 : 1.5,
           }}
           transition={{
-            type: "inertia", damping: 45,
+            type: "inertia",
+            damping: 45,
             stiffness: 400,
             mass: 1,
             restDelta: 0.001,
@@ -71,7 +85,8 @@ const CustomCursor = () => {
             scale: isClicking ? 1 : isPointer ? 2 : 1.5,
           }}
           transition={{
-            type: "inertia", damping: 45,
+            type: "inertia",
+            damping: 45,
             stiffness: 400,
             mass: 1,
             restDelta: 0.001,

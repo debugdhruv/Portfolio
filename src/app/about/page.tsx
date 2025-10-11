@@ -101,14 +101,13 @@ export default function About() {
               className="space-y-4 text-foreground font-inter"
             >
               <p className="text-lg leading-relaxed">
-                I&apos;m Dhruv, a Product designer from India and free-time Developer. I am a 
-                graduate in Computer Science and Engineering from LNCT (Lakshmi 
-                Narain College of Technology) Bhopal, and have previously worked as a{" "}
-                <span className="font-bold text-primary">product designer</span> with DevGrowth Solutions, Bhopal, IN (Hybrid).
+                I&apos;m Dhruv, a Product designer and Frontend Developer from India. I am a 
+                graduate in Computer Science and Engineering from LNCT Group of college, bhopal, and have previously worked as a{" "}
+                <span className="font-bold text-primary">product designer</span> with various startups & clients remotely.
               </p>
               
               <p className="text-lg leading-relaxed">
-                My experience so far includes building designs from scratch for 1m+ 
+                My 4 years of experience so far includes building designs from scratch for 1m+ 
                 users, crafting product visions while collaborating with cross functional 
                 partners, building narratives and pitches to senior leadership.
               </p>
@@ -133,8 +132,8 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="space-y-6"
-          >
+            className="space-y-6">
+
             <h2 className="text-2xl font-inter font-semibold text-foreground">Skills & Interest</h2>
             
             <div className="space-y-4 text-foreground font-inter">
