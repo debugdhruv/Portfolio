@@ -71,7 +71,7 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
               className="lg:hidden -mr-8 transition-transform duration-300"
             >
               {menuOpen ? (
-                <X className="h-6 w-6 text-primary transition-all duration-300" />
+                <X className="h-6 w-6 transition-all duration-300" />
               ) : (
                 <Menu className="h-6 w-6 transition-all duration-300" />
               )}
@@ -109,7 +109,7 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
               </Link>
             </li>
             <li>
-              <Link href="#footer" className="hover:text-primary">
+              <Link href="/#footer" className="hover:text-primary">
                 Contact
               </Link>
             </li>

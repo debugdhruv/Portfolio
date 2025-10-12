@@ -7,17 +7,17 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
-  const [isMobile, setIsMobile] = useState(true); // Default to true to avoid flash
+  // const [isMobile, setIsMobile] = useState(true); // Default to true to avoid flash
 
   useEffect(() => {
     // Check if device has a fine pointer (mouse/trackpad)
-    const checkMobile = () => {
-      const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
-      setIsMobile(!hasFinePointer || hasCoarsePointer);
-    };
+    // const checkMobile = () => {
+    //   const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    //   const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+    //   // setIsMobile(!hasFinePointer || hasCoarsePointer);
+    // };
 
-    checkMobile();
+    // checkMobile();
 
     const move = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
@@ -51,7 +51,7 @@ const CustomCursor = () => {
   }, []);
 
   // Don't render on mobile devices
-  if (isMobile) return null;
+  // if (isMobile) return null;
 
   return (
     <motion.div
