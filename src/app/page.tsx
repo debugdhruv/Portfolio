@@ -1669,14 +1669,14 @@ export default function Home() {
                 alt="Peace Light"
                 width={44}
                 height={44}
-                className="sm:w-32 inline-block dark:hidden"
+                className="sm:w-24 sm:h-24 inline-block dark:hidden"
               />
               <Image
                 src="/peace_dark.svg"
                 alt="Peace Dark"
                 width={44}
                 height={44}
-                className="sm:w-32 hidden dark:inline-block"
+                className="sm:w-24 sm:h-24 hidden dark:inline-block"
               />
             </>
           </div>
@@ -1742,14 +1742,14 @@ export default function Home() {
               href="https://instagram.com/dhruv_the_el_pee_da"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
+              className="group flex items-center gap-2 px-4 py-4 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 <Image src="/instagram_dark.svg" alt="Instagram Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
                 <Image src="/instagram_light.svg" alt="Instagram Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
                 <Image src="/instagram_light.svg" alt="Instagram Light Hover" width={16} height={16} className="hidden group-hover:block" />
               </>
-              <span>|</span>
-              <span>Instagram</span>
+              {/* <span className="hidden sm:inline-block">|</span> */}
+              <span className="hidden sm:inline-block">Instagram</span>
             </motion.a>
             <motion.a
               initial={{ opacity: 0, y: 50 }}
@@ -1759,14 +1759,14 @@ export default function Home() {
               href="https://linkedin.com/in/dhruvux"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
+              className="group flex items-center gap-2 px-4 py-4 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 <Image src="/linkedin_dark.svg" alt="LinkedIn Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
                 <Image src="/linkedin_light.svg" alt="LinkedIn Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
                 <Image src="/linkedin_light.svg" alt="LinkedIn Light Hover" width={16} height={16} className="hidden group-hover:block" />
               </>
-              <span>|</span>
-              <span>LinkedIn</span>
+              {/* <span className="hidden sm:inline-block">|</span> */}
+              <span className="hidden sm:inline-block">LinkedIn</span>
             </motion.a>
             <motion.a
               initial={{ opacity: 0, y: 50 }}
@@ -1776,14 +1776,14 @@ export default function Home() {
               href="https://www.behance.net/dhruvui"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
+              className="group flex items-center gap-2 px-4 py-4 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 <Image src="/behance_dark.svg" alt="Behance Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
                 <Image src="/behance_light.svg" alt="Behance Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
                 <Image src="/behance_light.svg" alt="Behance Light Hover" width={16} height={16} className="hidden group-hover:block" />
               </>
-              <span>|</span>
-              <span>Behance</span>
+              {/* <span className="hidden sm:inline-block">|</span> */}
+              <span className="hidden sm:inline-block">Behance</span>
             </motion.a>
             <motion.a
               initial={{ opacity: 0, y: 50 }}
@@ -1793,14 +1793,14 @@ export default function Home() {
               href="https://x.com/dhruv_is_here"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center space-x-2 px-3 py-2 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
+              className="group flex items-center gap-2 px-4 py-4 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
               <>
                 <Image src="/x_dark.svg" alt="Twitter Dark" width={16} height={16} className="block dark:hidden group-hover:hidden" />
                 <Image src="/x_light.svg" alt="Twitter Light" width={16} height={16} className="hidden dark:block group-hover:hidden" />
                 <Image src="/x_light.svg" alt="Twitter Light Hover" width={16} height={16} className="hidden group-hover:block" />
               </>
-              <span>|</span>
-              <span>Twitter</span>
+              {/* <span className="hidden sm:inline-block">|</span> */}
+              <span className="hidden sm:inline-block">Twitter</span>
             </motion.a>
           </div>
 

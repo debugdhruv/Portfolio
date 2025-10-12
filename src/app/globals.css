@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-* {
-  cursor: none !important;
-}
+html, body, * { cursor: none !important; }
 
 input,
 textarea,
