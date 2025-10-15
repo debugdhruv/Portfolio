@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "Showcase of my projects",
 };
 
+
 export const revalidate = 0;
 
 export default async function ProjectsPage() {

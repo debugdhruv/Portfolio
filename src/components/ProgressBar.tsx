@@ -5,39 +5,41 @@ import { usePathname } from "next/navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
+// Aapki configuration theek hai
 NProgress.configure({ showSpinner: false, speed: 400, minimum: 0.2 });
 
 export default function TopProgressBar() {
   const pathname = usePathname();
 
+  // Yeh effect link clicks par progress bar start karta hai
   useEffect(() => {
-  const handleStart = () => NProgress.start();
+    const handleStart = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
 
-  const anchorClickHandler = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    const anchor = target.closest("a");
+      if (
+        anchor &&
+        anchor.href &&
+        anchor.target !== "_blank" &&
+        anchor.hostname === window.location.hostname
+      ) {
+        NProgress.start();
+      }
+    };
 
-    if (
-      anchor &&
-      anchor.href &&
-      anchor.target !== "_blank" &&
-      anchor.hostname === window.location.hostname
-    ) {
-      handleStart();
-    }
-  };
+    // Click events ko suno
+    document.addEventListener("click", handleStart);
 
-  window.addEventListener("click", anchorClickHandler);
-  return () => window.removeEventListener("click", anchorClickHandler);
-}, []);
+    return () => {
+      document.removeEventListener("click", handleStart);
+    };
+  }, []); // Yeh effect sirf ek baar chalega
 
+  // Yeh effect route change hone par progress bar ko finish karta hai
   useEffect(() => {
-    // Finish progress bar on route change
-    const timer = setTimeout(() => {
-      NProgress.done();
-    }, 300);
-
-    return () => clearTimeout(timer);
+    // === FIX YAHAN HAI ===
+    // setTimeout ko hata diya gaya hai. Ab jaise hi page badlega, bar complete ho jayega.
+    NProgress.done();
   }, [pathname]);
 
   return null;

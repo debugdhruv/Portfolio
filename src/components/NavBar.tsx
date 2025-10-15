@@ -3,7 +3,7 @@
 // import Link from "next/link";
 // import Image from "next/image";
 // import { usePathname } from "next/navigation";
-// import { Menu, X, Sun, Moon } from "lucide-react";
+// import { Menu, Sun, Moon } from "lucide-react";
 // import { Button } from "@/components/ui/button";
 // import { useState, useEffect } from "react";
 
@@ -13,14 +13,10 @@
 
 // const NavBar = ({ onMenuToggle }: NavBarProps) => {
 //   const pathname = usePathname();
-//   const [menuOpen, setMenuOpen] = useState(false);
 //   const [currentTheme, setCurrentTheme] = useState<string>("light");
-  
-//   // Naya state jo hero section ki visibility track karega
 //   const [isHeroVisible, setIsHeroVisible] = useState(pathname === '/');
 
 //   useEffect(() => {
-//     // Theme logic (pehle jaisa hi)
 //     const savedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
 //     setCurrentTheme(savedTheme);
 //     const themeObserver = new MutationObserver(() => {
@@ -29,17 +25,15 @@
 //     });
 //     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
-//     // Scroll Observer logic (naya)
 //     if (pathname === '/') {
 //       const heroElement = document.getElementById('hero');
 //       if (!heroElement) return;
 
 //       const scrollObserver = new IntersectionObserver(
 //         ([entry]) => {
-//           // Jab hero section screen par hoga to true, warna false
 //           setIsHeroVisible(entry.isIntersecting);
 //         },
-//         { threshold: 0.1 } // 10% dikhne par trigger hoga
+//         { threshold: 0.1 }
 //       );
 
 //       scrollObserver.observe(heroElement);
@@ -49,17 +43,16 @@
 //         scrollObserver.disconnect();
 //       };
 //     } else {
-//       // Agar homepage nahi hai to hero section visible nahi hai
 //       setIsHeroVisible(false);
 //     }
 
 //     return () => themeObserver.disconnect();
-//   }, [pathname]); // Yeh effect page change hone par dubara chalega
+//   }, [pathname]);
 
+//   // FIX: handleMenuToggle ab seedha parent ko menu open karne ke liye bolega
 //   const handleMenuToggle = () => {
-//     const newState = !menuOpen;
-//     setMenuOpen(newState);
-//     onMenuToggle?.(newState);
+//     // Hamesha 'true' bhejenge kyunki NavBar ka kaam sirf menu kholna hai
+//     onMenuToggle?.(true); 
 //   };
   
 //   const handleThemeToggle = () => {
@@ -93,8 +86,6 @@
 //             </Link>
 
 //             <div className="flex items-center gap-2 -mr-8 lg:hidden">
-//               {/* === YAHAN CONDITION UPDATE KI GAYI HAI === */}
-//               {/* Button tab dikhega jab hero section visible NA ho */}
 //               {!isHeroVisible && (
 //                 <button
 //                   onClick={handleThemeToggle}
@@ -105,8 +96,9 @@
 //                 </button>
 //               )}
               
+//               {/* FIX: Ab yahan state check karne ki zaroorat nahi hai */}
 //               <button onClick={handleMenuToggle} className="transition-transform duration-300" aria-label="Toggle menu">
-//                 {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+//                 <Menu className="h-6 w-6" />
 //               </button>
 //             </div>
 //           </div>
@@ -188,9 +180,7 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
     return () => themeObserver.disconnect();
   }, [pathname]);
 
-  // FIX: handleMenuToggle ab seedha parent ko menu open karne ke liye bolega
   const handleMenuToggle = () => {
-    // Hamesha 'true' bhejenge kyunki NavBar ka kaam sirf menu kholna hai
     onMenuToggle?.(true); 
   };
   
@@ -217,29 +207,31 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
             </Link>
           </div>
 
+          {/* === RIGHT SIDE CONTROLS UPDATED HERE === */}
           <div className="mr-12 flex items-center gap-4">
+            
+            {/* Theme Toggle Button (Visible on all screen sizes) */}
+            {!isHeroVisible && (
+              <button
+                onClick={handleThemeToggle}
+                className="p-2 dark:bg-primary/30 bg-primary/30 rounded-full border-1 transition-transform duration-300"
+                aria-label="Toggle theme"
+              >
+                {currentTheme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </button>
+            )}
+
+            {/* Book a Call Button (Desktop Only) */}
             <Link href="https://calendly.com/dhruvtiwari-1130/booktheslot" target="_blank" rel="noopener noreferrer">
               <Button className="shadow-none border font-inter hidden lg:inline-flex rounded-lg px-4 py-6 text-md font-bold text-foreground bg-transparent hover:bg-primary hover:text-white active:bg-primary">
                 Book a call
               </Button>
             </Link>
 
-            <div className="flex items-center gap-2 -mr-8 lg:hidden">
-              {!isHeroVisible && (
-                <button
-                  onClick={handleThemeToggle}
-                  className="p-2 dark:bg-primary/30 bg-primary/30 rounded-full border-1 transition-transform duration-300"
-                  aria-label="Toggle theme"
-                >
-                  {currentTheme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-                </button>
-              )}
-              
-              {/* FIX: Ab yahan state check karne ki zaroorat nahi hai */}
-              <button onClick={handleMenuToggle} className="transition-transform duration-300" aria-label="Toggle menu">
-                <Menu className="h-6 w-6" />
-              </button>
-            </div>
+            {/* Mobile Menu Button (Mobile Only) */}
+            <button onClick={handleMenuToggle} className="transition-transform duration-300 lg:hidden" aria-label="Toggle menu">
+              <Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
 

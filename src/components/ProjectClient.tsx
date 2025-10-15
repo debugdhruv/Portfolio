@@ -207,7 +207,7 @@ export default function ProjectClient({ projects = [] }) {
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-4 flex flex-col flex-grow">
+                    <div className="p-4 dark:bg-gray-800 flex flex-col flex-grow">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                           {caseStudy.caseStudy}
@@ -227,7 +227,7 @@ export default function ProjectClient({ projects = [] }) {
                           href={caseStudy.behanceLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-row flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
+                          className="flex-row hover:text-black flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
                           View on Behance
                           <ExternalLink className="h-4 w-4" />
                         </a>
