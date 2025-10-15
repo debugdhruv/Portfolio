@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 // // import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
-import SmoothScroll from "@/components/SmoothScroll";
+// import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="twitter:title" content="Dhruv Tiwari — Product Designer & Frontend Developer" />
         <meta name="twitter:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing modern product design and frontend development." />
         <meta name="twitter:image" content="https://dhruvux.dev/og-image.png" />
-        <meta name="twitter:creator" content="@yourTwitterHandle" />
+        <meta name="twitter:creator" content="https://x.com/dhruv_is_here" />
         {/* Mobile Optimization */}
         <meta name="apple-mobile-web-app-title" content="Dhruv Tiwari" />
         <meta name="application-name" content="Dhruv Tiwari" />
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         {/* <Preloader /> */}
         <ClientRoot>
-          <SmoothScroll />
+          {/* <SmoothScroll /> */}
           <ProgressBar />
           <CustomCursor />
           <NavBar />
