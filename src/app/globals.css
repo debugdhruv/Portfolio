@@ -140,7 +140,7 @@ html #nprogress .bar {
 }
 
 .animate-marquee {
-  animation: marquee 10s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 
 @keyframes marquee-fast {
@@ -153,7 +153,7 @@ html #nprogress .bar {
 }
 
 .animate-marquee-fast {
-  animation: marquee-fast 10s linear infinite; /* ← faster speed */
+  animation: marquee-fast 15s linear infinite; /* ← faster speed */
 }
 
 /* Optional: hide scrollbar but still allow swipe/scroll */

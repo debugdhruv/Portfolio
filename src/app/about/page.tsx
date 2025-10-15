@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Linkedin, ExternalLink } from 'lucide-react';
+import { Instagram, Linkedin, ExternalLink, X } from 'lucide-react';
 
 export default function About() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -378,29 +378,49 @@ export default function About() {
           </div>
         </motion.footer>
       </motion.main>
+
+      
       {/* ✅ Animated Mobile Menu Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 50, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed bottom-14 left-28 right-28 z-[100] bg-background/10 backdrop-blur-lg border border-foreground/10 shadow-lg rounded-3xl px-8 py-6 flex flex-col items-center space-y-5 w-[50%] max-w-sm">
-
-            <Link href="/about" className="text-lg font-semibold hover:text-primary">About</Link>
-            <Link href="/projects" className="text-lg font-semibold hover:text-primary">Projects</Link>
-            <Link
-              href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lg font-semibold hover:text-primary"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[100] bg-primary text-white"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-12 right-10 z-[101]"
+              aria-label="Close menu"
             >
-              Resume
-            </Link>
-            <Link href="#footer" className="text-lg font-semibold hover:text-primary">
-              Contact
-            </Link>
+              <X size={28} />
+            </button>
+      
+            {/* Menu Links */}
+            <div className="flex h-full w-full flex-col items-end justify-center space-y-8 pr-8 sm:pr-16">
+              <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
+              <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
+              <Link
+                href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl font-semibold hover:opacity-80">
+                Resume
+              </Link>
+              <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
+                Contact
+              </Link>
+              <Link
+                href="https://calendly.com/dhruvtiwari-1130/booktheslot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl font-semibold hover:opacity-80">
+                Book a call
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
