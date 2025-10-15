@@ -65,7 +65,7 @@ export default function ProjectClient({ projects = [] }) {
 
   return (
     <>
-      <section className="m-auto px-6 md:px-14 pt-24">
+      <section className="m-auto px-6 md:px-44 pt-24">
         <div className="flex flex-col gap-4">
           <div className="w-full">
             <div className="flex items-center gap-4">
@@ -226,7 +226,7 @@ export default function ProjectClient({ projects = [] }) {
                           href={caseStudy.behanceLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-row flex items-center justify-center gap-2 bg-primary text-background hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
+                          className="flex-row flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
                           View on Behance
                           <ExternalLink className="h-4 w-4" />
                         </a>

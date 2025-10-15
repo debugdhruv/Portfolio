@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable}`}>
+    <html lang="en" className={`${whyte.variable} ${italiana.variable} ${inter.variable} ${tiro.variable} ${barcode.variable} `}>
       <head>
         <meta property="og:title" content="Dhruv Tiwari — Product Designer & Developer" />
         <meta property="og:description" content="Portfolio of Dhruv Narayan Tiwari, showcasing design and development work." />
