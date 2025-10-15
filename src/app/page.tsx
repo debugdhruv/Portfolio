@@ -80,7 +80,7 @@ export default function Home() {
         className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-28">
 
         {/* Hero Section */}
-        <section className="relative max-w-5xl w-full mx-auto px-4 py-12">
+        <section id="hero" className="relative max-w-5xl w-full mx-auto px-4 py-12">
           <div className="relative z-10 flex flex-col items-start space-y-6">
             <div className="flex items-end justify-between w-full mb-4">
               <motion.h1
@@ -592,7 +592,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed bottom-14 left-28 right-28 z-[100] bg-background/10 backdrop-blur-lg border border-foreground/10 shadow-lg rounded-3xl px-8 py-6 flex flex-col items-center space-y-5 w-[50%] max-w-sm">
+            className="fixed bottom-14 left-28 right-28 z-[100] bg-background/10 backdrop-blur-lg border border-foreground/10 shadow-lg rounded-3xl px-8 py-6 flex flex-col items-center space-y-5 w-[50%] max-w-sm"
+          >
             <Link href="/about" className="text-lg font-semibold hover:text-primary">About</Link>
             <Link href="/projects" className="text-lg font-semibold hover:text-primary">Projects</Link>
             <Link
@@ -604,6 +605,13 @@ export default function Home() {
             </Link>
             <Link href="#footer" className="text-lg font-semibold hover:text-primary">
               Contact
+            </Link>
+            <Link
+              href="https://calendly.com/dhruvtiwari-1130/booktheslot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold hover:text-primary">
+              Book a call
             </Link>
           </motion.div>
         )}

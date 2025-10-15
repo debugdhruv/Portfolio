@@ -3,34 +3,58 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface NavBarProps {
   onMenuToggle?: (isOpen: boolean) => void;
 }
 
 const NavBar = ({ onMenuToggle }: NavBarProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname(); // Yeh current path dega
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
 
-  const handleToggle = () => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setCurrentTheme(savedTheme);
+
+    const observer = new MutationObserver(() => {
+      const newTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+      setCurrentTheme(newTheme);
+    });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleMenuToggle = () => {
     const newState = !menuOpen;
     setMenuOpen(newState);
     onMenuToggle?.(newState);
   };
+  
+  const handleThemeToggle = () => {
+    const html = document.documentElement;
+    const newTheme = html.classList.contains("dark") ? "light" : "dark";
+    
+    html.classList.remove("light", "dark");
+    html.classList.add(newTheme);
+    localStorage.setItem("theme", newTheme);
+    
+    window.updateFavicon?.();
+  };
+
 
   return (
     <header className="fixed top-0 z-50 w-full bg-background">
       <div className="relative mx-auto w-full max-w-9xl px-6 py-4">
         <div className="mt-6 sm:mt-0 flex w-full items-center justify-between">
-          {/* Left - Logo */}
           <div className="hover:text-primary sm:ml-12 sm:text-3xl text-2xl font-barcode">
             <Link href="/" className="flex items-center">
-              {/* Mobile logo with dark mode swap */}
               <div className="block sm:hidden relative w-10 h-10">
-                {/* Light mode icon */}
                 <Image
                   src="/ico_light.png"
                   alt="Dhruv Logo Light"
@@ -38,7 +62,6 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
                   className="object-contain dark:hidden"
                   priority
                 />
-                {/* Dark mode icon */}
                 <Image
                   src="/ico_dark.png"
                   alt="Dhruv Logo Dark"
@@ -47,13 +70,10 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
                   priority
                 />
               </div>
-
-              {/* Desktop text logo */}
               <span className="hidden sm:inline">DHRUV NARAYAN TIWARI</span>
             </Link>
           </div>
 
-          {/* Right - CTA and Menu icon */}
           <div className="mr-12 flex items-center gap-4">
             <Link
               href="https://calendly.com/dhruvtiwari-1130/booktheslot"
@@ -65,21 +85,34 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
               </Button>
             </Link>
 
-            {/* Mobile Menu Icon */}
-            <button
-              onClick={handleToggle}
-              className="lg:hidden -mr-8 transition-transform duration-300"
-            >
-              {menuOpen ? (
-                <X className="h-6 w-6 transition-all duration-300" />
-              ) : (
-                <Menu className="h-6 w-6 transition-all duration-300" />
+            <div className="flex items-center gap-2 -mr-8 lg:hidden">
+              {/* === YAHAN CONDITION LAGAYI GAYI HAI === */}
+              {/* Agar pathname '/' nahi hai, tabhi button dikhega */}
+              {pathname !== '/#hero' && (
+                <button
+                  onClick={handleThemeToggle}
+                  className="p-2 dark:bg-primary/30 bg-primary/30 rounded-full border-1 transition-transform duration-300"
+                  aria-label="Toggle theme"
+                >
+                  {currentTheme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                </button>
               )}
-            </button>
+              
+              <button
+                onClick={handleMenuToggle}
+                className="transition-transform duration-300"
+                aria-label="Toggle menu"
+              >
+                {menuOpen ? (
+                  <X className="h-6 w-6 transition-all duration-300" />
+                ) : (
+                  <Menu className="h-6 w-6 transition-all duration-300" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Desktop Nav Links */}
         <nav>
           <ul className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex gap-8 text-md font-medium text-foreground font-inter">
             <li>
@@ -121,3 +154,14 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
 };
 
 export default NavBar;
+
+
+
+
+
+
+
+
+
+
+

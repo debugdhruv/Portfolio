@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 // // import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
-// import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         {/* <Preloader /> */}
         <ClientRoot>
-          {/* <SmoothScroll /> */}
+          <SmoothScroll />
           <ProgressBar />
           <CustomCursor />
           <NavBar />

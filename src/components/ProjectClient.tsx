@@ -66,7 +66,7 @@ export default function ProjectClient({ projects = [] }) {
 
   return (
     <>
-    <NavBar onMenuToggle={setMenuOpen}/>
+      <NavBar onMenuToggle={setMenuOpen} />
       <section className="m-auto px-6 md:px-44 pt-24">
         <div className="flex flex-col gap-4">
           <div className="w-full">
@@ -81,21 +81,19 @@ export default function ProjectClient({ projects = [] }) {
           <div className="flex gap-8 mt-4 border-b border-black/10 dark:border-white/10">
             <button
               onClick={() => setActiveTab("case-studies")}
-              className={`pb-2 text-lg font-medium transition-colors ${
-                activeTab === "case-studies"
+              className={`pb-2 text-lg font-medium transition-colors ${activeTab === "case-studies"
                   ? "text-slate-950 dark:text-white border-b-2 border-slate-950 dark:border-white"
                   : "text-slate-500 dark:text-slate-400"
-              }`}
+                }`}
             >
               Design
             </button>
             <button
               onClick={() => setActiveTab("development")}
-              className={`pb-2 text-lg font-medium transition-colors ${
-                activeTab === "development"
+              className={`pb-2 text-lg font-medium transition-colors ${activeTab === "development"
                   ? "text-slate-950 dark:text-white border-b-2 border-slate-950 dark:border-white"
                   : "text-slate-500 dark:text-slate-400"
-              }`}
+                }`}
             >
               Technical
             </button>
@@ -263,6 +261,13 @@ export default function ProjectClient({ projects = [] }) {
             </a>
             <a href="#footer" className="text-lg font-semibold hover:text-primary">
               Contact
+            </a>
+            <a
+              href="https://calendly.com/dhruvtiwari-1130/booktheslot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-semibold hover:text-primary">
+              Book a call
             </a>
           </motion.div>
         )}
