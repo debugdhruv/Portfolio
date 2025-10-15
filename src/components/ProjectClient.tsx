@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Github, Globe, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import NavBar from "@/components/NavBar";
 
 // Case studies data
 const caseStudiesData = [
@@ -51,7 +52,7 @@ const caseStudiesData = [
 export default function ProjectClient({ projects = [] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [activeTab, setActiveTab] = useState<"development" | "case-studies">("development");
+  const [activeTab, setActiveTab] = useState<"development" | "case-studies">("case-studies");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,6 +66,7 @@ export default function ProjectClient({ projects = [] }) {
 
   return (
     <>
+    <NavBar onMenuToggle={setMenuOpen}/>
       <section className="m-auto px-6 md:px-44 pt-24">
         <div className="flex flex-col gap-4">
           <div className="w-full">
@@ -78,16 +80,6 @@ export default function ProjectClient({ projects = [] }) {
           {/* Tab Buttons */}
           <div className="flex gap-8 mt-4 border-b border-black/10 dark:border-white/10">
             <button
-              onClick={() => setActiveTab("development")}
-              className={`pb-2 text-lg font-medium transition-colors ${
-                activeTab === "development"
-                  ? "text-slate-950 dark:text-white border-b-2 border-slate-950 dark:border-white"
-                  : "text-slate-500 dark:text-slate-400"
-              }`}
-            >
-              Development
-            </button>
-            <button
               onClick={() => setActiveTab("case-studies")}
               className={`pb-2 text-lg font-medium transition-colors ${
                 activeTab === "case-studies"
@@ -95,7 +87,17 @@ export default function ProjectClient({ projects = [] }) {
                   : "text-slate-500 dark:text-slate-400"
               }`}
             >
-              Case Studies
+              Design
+            </button>
+            <button
+              onClick={() => setActiveTab("development")}
+              className={`pb-2 text-lg font-medium transition-colors ${
+                activeTab === "development"
+                  ? "text-slate-950 dark:text-white border-b-2 border-slate-950 dark:border-white"
+                  : "text-slate-500 dark:text-slate-400"
+              }`}
+            >
+              Technical
             </button>
           </div>
         </div>

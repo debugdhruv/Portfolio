@@ -105,7 +105,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  className="hidden sm:inline-block text-xs sm:text-sm md:text-base text-left font-tiro text-muted-foreground tracking-wider">
+                  className="hidden sm:inline-block text-xs sm:text-sm md:text-base text-left font-tiro text-foreground tracking-wider">
                   भारतीय <span className="text-primary font-bold">PRODUCT DESIGNER</span>,
                   डिज़ाइन के <br />माध्यम से बेहतर मानव अनुभव बनाने में शामिल ।।
                 </motion.p>
@@ -121,7 +121,7 @@ export default function Home() {
               PRODUCT
               <div className="absolute left-[60px] top-[-32px] sm:left-[260px] sm:top-[-64px] w-[196px] h-[122px] sm:w-[320px] sm:h-[244px] z-10 blur-3xl opacity-50 rounded-full bg-gradient-to-r from-[#6F392A] to-[#AC2033] dark:from-[#092B44] dark:to-[#1A7F91]" />
               <div className="absolute left-[88px] top-[-10px] sm:left-[268px] sm:top-[-20px] z-20 cursor-pointer group" onClick={handleToggle}>
-                <div className="w-[106px] h-[58px] sm:w-[334px] sm:h-[172px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-2 px-3 sm:pb-5 sm:px-6">
+                <div className="w-[106px] h-[58px] sm:w-[334px] sm:h-[172px] rounded-full transition-all duration-300 ease-out bg-[url('/toggle_light_bg.png')] dark:bg-[url('/toggle_dark_bg.png')] bg-cover bg-center flex items-center pb-2 px-3 sm:pb-5 sm:px-8">
                   <div className="w-[36px] h-[36px] sm:w-[112px] sm:h-[112px] bg-white rounded-full shadow-[inset_0_8px_12px_rgba(0,0,0,0.40)] drop-shadow-lg transform transition-transform duration-300 ease-out translate-x-0 dark:translate-x-[48px] sm:dark:translate-x-[154px]" />
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
                 alt="Finder"
                 width={100}
                 height={100}
-                className="w-14 sm:w-20 sm:h-20 absolute right-[-12px] bottom-[-6px] sm:right-[-44px] sm:bottom-[82px] rotate-[10deg] z-10"
+                className="w-14 sm:w-24 sm:h-20 absolute right-[-12px] bottom-[-8px] sm:right-[-44px] sm:bottom-[88px] rotate-[5deg] z-10"
               />
               <div className="w-full flex justify-end">
                 <div className="font-whyte text-sm sm:text-xl md:text-3xl lg:text-5xl font-bold text-foreground">
@@ -233,7 +233,7 @@ export default function Home() {
         </section>
 
         {/* skills */}
-        <section className="flex justify-center items-center mt-28">
+          <section className="flex justify-center items-center w-screen overflow-x-auto no-scrollbar mt-28 relative left-1/2 right-1/2 -mx-[50vw]">
           <div className="flex flex-col text-left w-full max-w-6xl px-4">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
@@ -261,8 +261,9 @@ export default function Home() {
             />
 
             {/* Mobile View - Marquee */}
-            <div className="sm:hidden overflow-hidden mt-4">
-              <div className="flex gap-2 animate-marquee whitespace-nowrap">
+            <div className="sm:hidden overflow-x-auto no-scrollbar mt-4">
+  <div className="flex gap-3 animate-marquee-fast whitespace-nowrap w-max px-0">
+
                 {/* First set */}
                 <div className="inline-flex gap-3">
                   <span className="px-3 py-2 bg-foreground text-background border-2 border-foreground rounded-full text-sm font-medium">Empathy</span>
@@ -361,14 +362,27 @@ export default function Home() {
         </motion.section>
 
         {/* Last Lines */}
-        <div className="mt-32 mx-auto items-center flex justify-center max-w-6xl">
-        <motion.p initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="flex items-center justify-center font-italiana text-center text-4xl">
-          My goal is to bridge the gap between design and development to build digital experiences that are both beautiful and functional.
-        </motion.p>
+        <div className="mt-44 mb-16 sm:mx-auto mx-2 items-center flex-1 justify-center sm:max-w-6xl">
+          <motion.span initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="items-center text-muted-foreground justify-center flex text-6xl sm:text-7xl font-tiro">&quot;</motion.span>
+          <motion.p initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex items-center -mt-4 justify-center text-primary font-tiro sm:font-italiana text-center text-md sm:text-4xl">
+            My goal is to bridge the gap between design & development to build digital experiences that are both beautiful & functional.
+          </motion.p>
+          <motion.span className="flex mx-auto items-center justify-center mt-10 sm:mt-16 gap-4 sm:gap-4">
+            <Image src="/ico_dark.png" width={100} height={100} alt="Me" className="dark:hidden inline-block w-10 h-10 sm:w-16 sm:h-16" />
+            <Image src="/ico_light.png" width={100} height={100} alt="Me" className="dark:inline-block hidden w-10 h-10 sm:w-16 sm:h-16" />
+            <motion.div className="flex-col sm:space-y-1 text-left justify-start">
+              <motion.h3 className="font-inter font-bold text-sm sm:text-xl">Dhruv Narayan Tiwari</motion.h3>
+              <motion.h3 className="font-inter font-semi text-xs sm:text-lg text-foreground/50">Product Designer & Developer</motion.h3>
+            </motion.div>
+          </motion.span>
         </div>
 
         {/* Footer */}
@@ -412,30 +426,33 @@ export default function Home() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
                 className="text-base mb-1 sm:text-2xl font-semibold text-foreground">Connect with me:</motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="text-xl sm:text-2xl hover:text-primary font-bold text-foreground relative inline-block">
-                dhruvtiwari.1130@gmail.com
-                <>
-                  <Image
-                    src="/Polygon 2.svg"
-                    alt="Cursor Polygon Light"
-                    width={50}
-                    height={50}
-                    className="absolute -right-4 -bottom-10 translate-x-6 translate-y-2 block dark:hidden animate-fly"
-                  />
-                  <Image
-                    src="/Polygon 1.svg"
-                    alt="Cursor Polygon Dark"
-                    width={50}
-                    height={50}
-                    className="absolute -right-4 -bottom-12 translate-x-6 translate-y-2 hidden dark:block animate-fly"
-                  />
-                </>
-              </motion.p>
+
+              <a href="mailto:dhruvtiwari.1130@gmail.com?subject=Let's%20Connect&body=Hey%20Dhruv!">
+                <motion.p
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="text-xl sm:text-2xl hover:text-primary font-bold text-foreground relative inline-block">
+                  dhruvtiwari.1130@gmail.com
+                  <>
+                    <Image
+                      src="/Polygon 2.svg"
+                      alt="Cursor Polygon Light"
+                      width={50}
+                      height={50}
+                      className="absolute -right-4 -bottom-10 translate-x-6 translate-y-2 block dark:hidden animate-fly"
+                    />
+                    <Image
+                      src="/Polygon 1.svg"
+                      alt="Cursor Polygon Dark"
+                      width={50}
+                      height={50}
+                      className="absolute -right-4 -bottom-12 translate-x-6 translate-y-2 hidden dark:block animate-fly"
+                    />
+                  </>
+                </motion.p>
+              </a>
             </div>
           </div>
 
@@ -532,7 +549,7 @@ export default function Home() {
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="absolute sm:animate-fly-1 sm:bottom-32 bottom-14 right-0 sm:right-12 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition">
+            className="absolute sm:animate-fly-1 sm:bottom-32 bottom-14 right-0 sm:right-12 w-14 h-14 rounded-full bg-transparent sm:bg-primary text-foreground flex items-center justify-center hover:scale-110 transition">
             <ArrowUp size={24} />
           </button>
         </footer>
