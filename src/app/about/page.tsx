@@ -103,26 +103,26 @@ export default function About() {
                   <span className="font-bold"> freelancer</span>.
                 </p>
                 <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4, ease: "easeOut" }}
-                      className="space-y-4 hidden sm:inline-block overflow-hidden">
-                      <p className="text-lg leading-relaxed">
-                        My experience includes designing and developing full-stack products like
-                        <span className="font-bold"> The Brain Room</span> a productivity and idea management platform and an <span className="font-bold">Environmental Pollutants Dashboard </span>
-                        that visualizes real-time environmental data using React and Node.js.
-                        I&apos;ve worked with startups such as <span className="font-bold">Vyapari Sang </span>
-                        and <span className="font-bold">Xeonic</span>, delivering user-focused design systems and scalable web solutions.
-                        As the <span className="font-bold">UI/UX Lead at GDSC</span>, I led a team whose startup idea
-                        won a <span className="font-bold">national award in 2023</span>.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        I specialize in tools & technologies like <span className="font-bold">Figma, Framer, Illustrator Protopie, Spline, React.js, Node.js, Tailwind CSS,</span>
-                        and <span className="font-bold">JavaScript, Github, CI/CD, Vercel, Render, Postman, MongoDB, Jira.
-                        </span>
-                      </p>
-                    </motion.div>
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="space-y-4 hidden sm:inline-block overflow-hidden">
+                  <p className="text-lg leading-relaxed">
+                    My experience includes designing and developing full-stack products like
+                    <span className="font-bold"> The Brain Room</span> a productivity and idea management platform and an <span className="font-bold">Environmental Pollutants Dashboard </span>
+                    that visualizes real-time environmental data using React and Node.js.
+                    I&apos;ve worked with startups such as <span className="font-bold">Vyapari Sang </span>
+                    and <span className="font-bold">Xeonic</span>, delivering user-focused design systems and scalable web solutions.
+                    As the <span className="font-bold">UI/UX Lead at GDSC</span>, I led a team whose startup idea
+                    won a <span className="font-bold">national award in 2023</span>.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    I specialize in tools & technologies like <span className="font-bold">Figma, Framer, Illustrator Protopie, Spline, React.js, Node.js, Tailwind CSS,</span>
+                    and <span className="font-bold">JavaScript, Github, CI/CD, Vercel, Render, Postman, MongoDB, Jira.
+                    </span>
+                  </p>
+                </motion.div>
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -148,7 +148,7 @@ export default function About() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-                
+
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
                   className="sm:hidden font-bold text-muted-foreground hover:text-primary active:text-primary no-underline transition-colors duration-300"
@@ -379,28 +379,29 @@ export default function About() {
         </motion.footer>
       </motion.main>
 
-      
+
       {/* ✅ Animated Mobile Menu Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            // ये प्रॉपर्टीज़ लेफ्ट-साइड स्लाइड-इन इफ़ेक्ट के लिए अपडेट की गई हैं
+            initial={{ x: "100%" }} // स्क्रीन के लेफ्ट से बाहर शुरू करें
+            animate={{ x: 0 }} // स्क्रीन पर एंटर करें
+            exit={{ x: "-100%" }} // स्क्रीन के लेफ्ट से बाहर निकलें
+            transition={{ duration: 0.4, ease: "easeInOut" }} // एक स्मूथ ट्रांजीशन के लिए
             className="fixed inset-0 z-[100] bg-primary text-white"
           >
             {/* Close Button */}
             <button
               onClick={() => setMenuOpen(false)}
-              className="absolute top-12 right-10 z-[101]"
+              className="absolute top-12 right-6 z-[101]"
               aria-label="Close menu"
             >
-              <X size={28} />
+              <X size={26} />
             </button>
-      
+
             {/* Menu Links */}
-            <div className="flex h-full w-full flex-col items-end justify-center space-y-8 pr-8 sm:pr-16">
+            <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
               <Link

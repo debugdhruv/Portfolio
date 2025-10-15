@@ -243,48 +243,49 @@ export default function ProjectClient({ projects = [] }) {
 
       {/* Animated Mobile Menu Overlay */}
       <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] bg-primary text-white"
-          >
-            {/* Close Button */}
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="absolute top-12 right-10 z-[101]"
-              aria-label="Close menu"
-            >
-              <X size={28} />
-            </button>
+  {menuOpen && (
+    <motion.div
+      // ये प्रॉपर्टीज़ लेफ्ट-साइड स्लाइड-इन इफ़ेक्ट के लिए अपडेट की गई हैं
+      initial={{ x: "100%" }} // स्क्रीन के लेफ्ट से बाहर शुरू करें
+      animate={{ x: 0 }} // स्क्रीन पर एंटर करें
+      exit={{ x: "-100%" }} // स्क्रीन के लेफ्ट से बाहर निकलें
+      transition={{ duration: 0.4, ease: "easeInOut" }} // एक स्मूथ ट्रांजीशन के लिए
+      className="fixed inset-0 z-[100] bg-primary text-white"
+    >
+      {/* Close Button */}
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="absolute top-12 right-6 z-[101]"
+        aria-label="Close menu"
+      >
+        <X size={26} />
+      </button>
       
-            {/* Menu Links */}
-            <div className="flex h-full w-full flex-col items-end justify-center space-y-8 pr-8 sm:pr-16">
-              <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
-              <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
-              <Link
-                href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-4xl font-semibold hover:opacity-80">
-                Resume
-              </Link>
-              <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
-                Contact
-              </Link>
-              <Link
-                href="https://calendly.com/dhruvtiwari-1130/booktheslot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-4xl font-semibold hover:opacity-80">
-                Book a call
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Menu Links */}
+      <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
+        <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
+        <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
+        <Link
+          href="https://drive.google.com/file/d/1QajQRx9Xu8NeX3yaG_dmtDn6XNjkS4YO/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-4xl font-semibold hover:opacity-80">
+          Resume
+        </Link>
+        <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
+          Contact
+        </Link>
+        <Link
+          href="https://calendly.com/dhruvtiwari-1130/booktheslot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-4xl font-semibold hover:opacity-80">
+          Book a call
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </>
   );
 }
