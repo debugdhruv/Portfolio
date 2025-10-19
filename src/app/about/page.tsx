@@ -258,80 +258,56 @@ export default function About() {
               <div className="space-y-8">
                 {/* DevGrowth Solutions */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground font-inter">DevGrowth Solutions</h3>
-                  <p className="text-sm text-muted-foreground">• 2023 - 2024 (Hybrid)</p>
+                  <h3 className="font-semibold text-foreground font-inter">DevRipples Infotech Pvt. Ltd.</h3>
+                  <p className="text-sm text-muted-foreground">August 2025 - Present (Indore)</p>
                   <p className="text-sm text-foreground">
-                    Product Design - Creating mid-fidelity wireframes - high fidelity wireframes -
-                    interactive prototypes across four platforms tailored specifically for the human resources
-                    industry.
+                    Leading end-to-end product design initiatives, translating business goals into intuitive user experiences, mentoring designers, and collaborating cross-functionally to deliver impactful, user-centered digital products.
                   </p>
                 </div>
 
                 {/* AbC@ Xyz.com */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground font-inter">AbC@ Xyz.com</h3>
-                  <p className="text-sm text-muted-foreground">• 2021 - 2023 (Remote)</p>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-foreground font-inter">Xeonic</h3>
+                  <p className="text-sm text-muted-foreground">July - November 2024</p>
+                  {/* <p className="text-sm text-foreground">
                     Product Design - Creating mid-fidelity wireframes - high fidelity wireframes.
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* XYZ * abc.com Solutions */}
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground font-inter">XYZ * abc.com Solutions</h3>
-                  <p className="text-sm text-muted-foreground">• 2023 - 2024 (Hybrid)</p>
-                  <p className="text-sm text-foreground">
+                  <h3 className="font-semibold text-foreground font-inter">Vyapari Sang</h3>
+                  <p className="text-sm text-muted-foreground">August 2023 - November 2024</p>
+                  {/* <p className="text-sm text-foreground">
                     Product Design - Creating mid-fidelity wireframes.
-                  </p>
+                  </p> */}
                 </div>
-              </div>
 
-              {/* Contact Section under Experience */}
-              <div className="space-y-6 pt-8">
-                <h2 className="text-2xl font-inter font-semibold text-foreground">Contact</h2>
+                {/* AbC@ Xyz.com */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground font-inter">Google Developers Student Club</h3>
+                  <p className="text-sm text-muted-foreground">September 2023 - 2024</p>
+                  {/* <p className="text-sm text-foreground">
+                    Product Design - Creating mid-fidelity wireframes - high fidelity wireframes.
+                  </p> */}
+                </div>
 
-                <div className="space-y-4">
-                  {/* Email */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2 font-inter">Email</h4>
-                    <a
-                      href="mailto:dhruvtiwari.1130@gmail.com"
-                      className="text-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      dhruvtiwari.1130@gmail.com
-                    </a>
-                  </div>
+                {/* XYZ * abc.com Solutions */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground font-inter">Vyapari Sang</h3>
+                  <p className="text-sm text-muted-foreground">August 2023 - November 2024</p>
+                  {/* <p className="text-sm text-foreground">
+                    Product Design - Creating mid-fidelity wireframes.
+                  </p> */}
+                </div>
 
-                  {/* Socials */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-3 font-inter">Socials</h4>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://instagram.com/dhruv_the_el_pee_da"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        <Instagram size={20} />
-                      </a>
-                      <a
-                        href="https://linkedin.com/in/dhruvux"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        <Linkedin size={20} />
-                      </a>
-                      <a
-                        href="https://www.behance.net/dhruvui"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    </div>
-                  </div>
+                {/* XYZ * abc.com Solutions */}
+                <div className="space-y-2">
+                  <h3 className="font-semibold text-foreground font-inter">Graphic Design and Content Writing</h3>
+                  <p className="text-sm text-muted-foreground">February 2020 - April 2022</p>
+                  {/* <p className="text-sm text-foreground">
+                    Product Design - Creating mid-fidelity wireframes.
+                  </p> */}
                 </div>
               </div>
             </motion.div>
@@ -361,7 +337,55 @@ export default function About() {
                   <p className="text-sm text-foreground">Diploma in Computer Science & Engineering</p>
                 </div>
               </div>
+              {/* Contact Section under Experience */}
+              <div className="space-y-6 pt-8">
+                <h2 className="text-2xl font-inter font-semibold text-foreground">Contact</h2>
+
+                <div className="space-y-4">
+                  {/* Email */}
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2 font-inter">Email</h4>
+                    <a
+                      href="mailto:dhruvtiwari.1130@gmail.com"
+                      className="text-foreground hover:text-primary transition-colors duration-300"
+                    >
+                      dhruvtiwari.1130@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-foreground mb-3 font-inter">Socials</h4>
+                <div className="flex items-center my-auto space-x-6">
+                  <a
+                    href="https://instagram.com/dhruv_the_el_pee_da"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    <Instagram size={20} />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/dhruvux"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <a
+                    href="https://www.behance.net/dhruvui"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:text-primary transition-colors duration-300"
+                  >
+                    <Image src="behance_dark.svg" width={28} height={28} alt="Behance Logo" className="dark:hidden inline-block" />
+                    <Image src="behance_light.svg" width={28} height={28} alt="Behance Logo" className="hidden dark:inline-block" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
+
           </div>
         </motion.section>
 

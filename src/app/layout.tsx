@@ -6,7 +6,7 @@ import ProgressBar from "@/components/ProgressBar";
 // // import Preloader from "@/components/PreLoader";
 import CustomCursor from "@/components/CustomCursor";
 // import SmoothScroll from "@/components/SmoothScroll";
-// import ClientRoot from "@/components/ClientRoot";
+import ClientRoot from "@/components/ClientRoot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.dev"),
@@ -91,13 +91,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         {/* <Preloader /> */}
-        {/* <ClientRoot> */}
+        <ClientRoot>
           {/* <SmoothScroll /> */}
           <ProgressBar />
           <CustomCursor />
           <NavBar />
           {children}
-        {/* </ClientRoot> */}
+        </ClientRoot>
       </body>
     </html>
   );

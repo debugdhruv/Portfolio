@@ -314,7 +314,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-whyte font-bold mb-8 sm:mb-12">
-              Experience
+              Timeline
             </motion.h1>
 
             <div className="divide-y divide-gray-200 dark:divide-gray-800">
