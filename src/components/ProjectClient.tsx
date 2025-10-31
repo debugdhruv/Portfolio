@@ -272,7 +272,7 @@ export default function ProjectClient({ projects = [] }) {
           className="text-4xl font-semibold hover:opacity-80">
           Resume
         </Link>
-        <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
+        <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80"  onClick={() => setMenuOpen(false)}>
           Contact
         </Link>
         <Link

@@ -5,41 +5,27 @@ import { usePathname } from "next/navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
-// Aapki configuration theek hai
-NProgress.configure({ showSpinner: false, speed: 400, minimum: 0.2 });
+// Configure NProgress
+NProgress.configure({
+  showSpinner: false,
+  speed: 400,
+  minimum: 0.15,
+  easing: "ease",
+});
 
 export default function TopProgressBar() {
   const pathname = usePathname();
 
-  // Yeh effect link clicks par progress bar start karta hai
   useEffect(() => {
-    const handleStart = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const anchor = target.closest("a");
+    // Start progress bar slightly before route completes
+    NProgress.start();
 
-      if (
-        anchor &&
-        anchor.href &&
-        anchor.target !== "_blank" &&
-        anchor.hostname === window.location.hostname
-      ) {
-        NProgress.start();
-      }
-    };
+    // Finish progress bar after a small delay
+    const timer = setTimeout(() => {
+      NProgress.done();
+    }, 300);
 
-    // Click events ko suno
-    document.addEventListener("click", handleStart);
-
-    return () => {
-      document.removeEventListener("click", handleStart);
-    };
-  }, []); // Yeh effect sirf ek baar chalega
-
-  // Yeh effect route change hone par progress bar ko finish karta hai
-  useEffect(() => {
-    // === FIX YAHAN HAI ===
-    // setTimeout ko hata diya gaya hai. Ab jaise hi page badlega, bar complete ho jayega.
-    NProgress.done();
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return null;

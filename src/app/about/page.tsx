@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Linkedin, ExternalLink, X } from 'lucide-react';
+import { Instagram, Linkedin, ExternalLink, X, ArrowBigDown } from 'lucide-react';
 
 export default function About() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -416,11 +416,14 @@ export default function About() {
             className="fixed inset-0 z-[100] bg-primary text-white"
           >
             {/* Close Button */}
+            <button>
+              <ArrowBigDown className=""/>
+            </button>
+
             <button
               onClick={() => setMenuOpen(false)}
               className="absolute top-12 right-6 z-[101]"
-              aria-label="Close menu"
-            >
+              aria-label="Close menu">
               <X size={26} />
             </button>
 
@@ -435,7 +438,7 @@ export default function About() {
                 className="text-4xl font-semibold hover:opacity-80">
                 Resume
               </Link>
-              <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
+              <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
               <Link

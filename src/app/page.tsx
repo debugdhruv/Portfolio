@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Image from "next/image";
@@ -7,8 +8,11 @@ import { useEffect, useState } from "react";
 // X icon ko yahan import karein
 import { ArrowUp, X } from 'lucide-react';
 import { motion } from "framer-motion";
-import FeaturedWork from "@/components/FeaturedWork";
+const FeaturedWork = dynamic(() => import("@/components/FeaturedWork"), {
+  loading: () => <div className="h-[400px] w-full bg-muted animate-pulse"/>,
+});
 import NavBar from "@/components/NavBar";
+import next from "next";
 
 declare global {
   interface Window {
@@ -617,7 +621,7 @@ export default function Home() {
                 className="text-4xl font-semibold hover:opacity-80">
                 Resume
               </Link>
-              <Link href="#footer" className="text-4xl font-semibold hover:opacity-80">
+              <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
               <Link
