@@ -16,7 +16,7 @@ export default function About() {
   return (
     <>
       <NavBar onMenuToggle={setMenuOpen} />
-
+      
       <motion.main
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
