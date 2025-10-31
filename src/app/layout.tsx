@@ -1,13 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
-import ProgressBar from "@/components/ProgressBar";
-// // import Preloader from "@/components/PreLoader";
+const ProgressBar = dynamic(() => import("@/components/ProgressBar"), {
+  loading: () => <div className="h-[400px] w-full bg-muted animate-pulse"/>,
+});
 import CustomCursor from "@/components/CustomCursor";
-// import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from "@/components/SmoothScroll";
 import ClientRoot from "@/components/ClientRoot";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.dev"),
   title: "Dhruv — Product Designer & Developer",
@@ -90,12 +91,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
-        {/* <Preloader /> */}
         <ProgressBar />
         <CustomCursor />
+        <SmoothScroll />
+        <NavBar />
         <ClientRoot>
-          {/* <SmoothScroll /> */}
-          <NavBar />
           {children}
         </ClientRoot>
       </body>

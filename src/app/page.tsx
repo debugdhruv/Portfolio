@@ -5,14 +5,12 @@ import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// X icon ko yahan import karein
 import { ArrowUp, X } from 'lucide-react';
 import { motion } from "framer-motion";
 const FeaturedWork = dynamic(() => import("@/components/FeaturedWork"), {
   loading: () => <div className="h-[400px] w-full bg-muted animate-pulse"/>,
 });
 import NavBar from "@/components/NavBar";
-import next from "next";
 
 declare global {
   interface Window {
@@ -84,7 +82,6 @@ export default function Home() {
         viewport={{ once: true }}
         className="relative w-full items-center justify-center px-4 pt-24 md:pt-32 lg:pt-28">
 
-        {/* Aapke page ka poora code yahan hai, maine use chota kar diya hai */}
         {/* Hero Section */}
         <section id="hero" className="relative max-w-5xl w-full mx-auto px-4 py-12">
           <div className="relative z-10 flex flex-col items-start space-y-6">
@@ -555,7 +552,7 @@ export default function Home() {
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="absolute sm:animate-fly-1 sm:bottom-32 bottom-14 right-0 sm:right-12 w-14 h-14 rounded-full bg-transparent sm:bg-primary text-white flex items-center justify-center hover:scale-110 transition">
+            className="absolute sm:animate-fly-1 sm:bottom-32 bottom-14 right-0 sm:right-12 w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center hover:scale-110 transition">
             <ArrowUp size={24} />
           </button>
         </footer>
@@ -594,11 +591,10 @@ export default function Home() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            // ये प्रॉपर्टीज़ लेफ्ट-साइड स्लाइड-इन इफ़ेक्ट के लिए अपडेट की गई हैं
-            initial={{ x: "100%" }} // स्क्रीन के लेफ्ट से बाहर शुरू करें
-            animate={{ x: 0 }} // स्क्रीन पर एंटर करें
-            exit={{ x: "-100%" }} // स्क्रीन के लेफ्ट से बाहर निकलें
-            transition={{ duration: 0.4, ease: "easeInOut" }} // एक स्मूथ ट्रांजीशन के लिए
+            initial={{ x: "100%" }} 
+            animate={{ x: 0 }} 
+            exit={{ x: "-100%" }} 
+            transition={{ duration: 0.4, ease: "easeInOut" }} 
             className="fixed inset-0 z-[100] bg-primary text-white"
           >
             {/* Close Button */}

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Instagram, Linkedin, ExternalLink, X, ArrowBigDown } from 'lucide-react';
+import { Instagram, Linkedin, X, ArrowBigDown } from 'lucide-react';
 
 export default function About() {
   const [menuOpen, setMenuOpen] = useState(false);
