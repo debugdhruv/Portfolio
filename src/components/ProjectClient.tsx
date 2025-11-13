@@ -68,7 +68,7 @@ export default function ProjectClient({ projects = [] }) {
   return (
     <>
       <NavBar onMenuToggle={setMenuOpen} />
-      <section className="m-auto px-6 md:px-44 pt-24">
+      <section className="m-auto px-6 md:px-44 mb-8 pt-24">
         <div className="flex flex-col gap-4">
           <div className="w-full">
             <div className="flex items-center gap-4">
