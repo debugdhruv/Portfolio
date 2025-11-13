@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 import CustomCursor from "@/components/CustomCursor";
 // import SmoothScroll from "@/components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/next"
 import ClientRoot from "@/components/ClientRoot";
 export const metadata: Metadata = {
   metadataBase: new URL("https://dhruvux.dev"),
@@ -94,6 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ClientRoot>
         <NavBar />
           {children}
+          <Analytics/>
         </ClientRoot>
       </body>
     </html>
