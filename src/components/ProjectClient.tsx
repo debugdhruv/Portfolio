@@ -12,38 +12,48 @@ import Link from "next/link";
 const caseStudiesData = [
   {
     id: '1',
+    title: 'Dev Ripples Landing Page',
+    readTime: '12 min Read',
+    image: '/Cover_Main.png',
+    caseStudy: 'Case Study 01',
+    viewProject: true,
+    behanceLink: 'https://www.figma.com/design/anQbuwaLl3rll3uvF23XoX/DevRipples---Redesign?node-id=206-217&t=jjVMP2rvk1T1HlNd-1',
+    grad: false,
+  },
+  {
+    id: '2',
     title: 'Vyapari Sang',
     readTime: '17 min Read',
     image: '/phd_1.png',
-    caseStudy: 'Case Study 01',
+    caseStudy: 'Case Study 02',
     viewProject: true,
     behanceLink: 'https://www.behance.net/gallery/236124553/Vyapari-Sang',
     grad: false,
   },
   {
-    id: '2',
+    id: '3',
     title: 'Xeonic',
     readTime: '8 min Read',
     image: '/phd_2.png',
-    caseStudy: 'Case Study 02',
+    caseStudy: 'Case Study 03',
     behanceLink: 'https://www.behance.net/gallery/205515587/Xeonic',
     grad: false,
   },
   {
-    id: '3',
+    id: '4',
     title: 'Macros',
     readTime: '5 min Read',
     image: '/phd_3.png',
-    caseStudy: 'Case Study 03',
+    caseStudy: 'Case Study 04',
     behanceLink: 'https://www.behance.net/gallery/218717433/Macros-Food-Tracker-App-(UI-UX-Redesign)',
     grad: true,
   },
   {
-    id: '4',
+    id: '5',
     title: 'IRCTC Redesign',
     readTime: '12 min Read',
     image: '/phd_4.png',
-    caseStudy: 'Case Study 04',
+    caseStudy: 'Case Study 05',
     viewProject: true,
     behanceLink: 'https://www.behance.net/gallery/218713471/IRCTC-App-Redesign',
     grad: false,
@@ -228,7 +238,7 @@ export default function ProjectClient({ projects = [] }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-row hover:text-black flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
-                          View on Behance
+                          {caseStudy.id === '1' ? 'View in Figma' : 'View on Behance'}
                           <ExternalLink className="h-4 w-4" />
                         </a>
                       </div>
@@ -265,13 +275,13 @@ export default function ProjectClient({ projects = [] }) {
       <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
         <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
         <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
-        <Link
+        {/* <Link
           href="https://drive.google.com/file/d/12niEK0OIJFSsmz3T9NHv3khiqOONejkK/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="text-4xl font-semibold hover:opacity-80">
           Resume
-        </Link>
+        </Link> */}
         <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80"  onClick={() => setMenuOpen(false)}>
           Contact
         </Link>

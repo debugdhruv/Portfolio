@@ -431,13 +431,13 @@ export default function About() {
             <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
-              <Link
+              {/* <Link
                 href="https://drive.google.com/file/d/12niEK0OIJFSsmz3T9NHv3khiqOONejkK/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">
                 Resume
-              </Link>
+              </Link> */}
               <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>

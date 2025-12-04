@@ -26,7 +26,7 @@ declare global {
 }
 
 const timeline: TimelineItem[] = [
-  { year: "2022 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
+  // { year: "2022 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
   { year: "Aug 2025 - Present", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
   { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
   { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
@@ -428,7 +428,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="text-base mb-1 sm:text-2xl font-semibold text-foreground">Connect with me:</motion.p>
+                className="text-base mb-1 sm:text-2xl font-semibold text-foreground/20">Connect with me</motion.p>
 
               <a href="mailto:dhruvtiwari.1130@gmail.com?subject=Let's%20Connect&body=Hey%20Dhruv!">
                 <motion.p
@@ -610,13 +610,13 @@ export default function Home() {
             <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
-              <Link
+              {/* <Link
                 href="https://drive.google.com/file/d/12niEK0OIJFSsmz3T9NHv3khiqOONejkK/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">
                 Resume
-              </Link>
+              </Link> */}
               <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
