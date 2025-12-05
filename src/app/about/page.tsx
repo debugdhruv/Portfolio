@@ -432,7 +432,7 @@ export default function About() {
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
               {/* <Link
-                href="https://drive.google.com/file/d/12niEK0OIJFSsmz3T9NHv3khiqOONejkK/view?usp=sharing"
+                href="https://drive.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">
