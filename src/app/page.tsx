@@ -26,8 +26,8 @@ declare global {
 }
 
 const timeline: TimelineItem[] = [
-  // { year: "2022 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
-  { year: "Aug 2025 - Present", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
+  { year: "2023 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
+  { year: "Aug 2025 - Dec 2025", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
   { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
   { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
   { year: "Sept 2023 - 2024", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: false, external: false },
@@ -610,13 +610,13 @@ export default function Home() {
             <div className="flex h-screen w-screen flex-col items-end justify-center space-y-10 pr-8 sm:pr-16">
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
-              {/* <Link
-                href="https://drive.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing"
+              <Link
+                href="https://drive.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">
                 Resume
-              </Link> */}
+              </Link>
               <Link href="/#footer" className="text-4xl font-semibold hover:opacity-80" onClick={() => setMenuOpen(false)}>
                 Contact
               </Link>
