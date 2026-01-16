@@ -26,7 +26,7 @@ declare global {
 }
 
 const timeline: TimelineItem[] = [
-  { year: "2023 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
+  { year: "2024 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
   { year: "Aug 2025 - Dec 2025", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
   { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
   { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
