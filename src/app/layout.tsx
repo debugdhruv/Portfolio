@@ -110,7 +110,7 @@ import type { Metadata } from "next";
 import { whyte, italiana, inter, tiro, barcode } from "@/lib/fonts";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
-import CustomCursor from "@/components/CustomCursor";
+// import CustomCursor from "@/components/CustomCursor";
 // import SmoothScroll from "@/components/SmoothScroll";
 import { Analytics } from "@vercel/analytics/next"
 import ClientRoot from "@/components/ClientRoot";
@@ -200,7 +200,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <ProgressBar />
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         {/* <SmoothScroll /> */}
         <ClientRoot>
         <NavBar />
