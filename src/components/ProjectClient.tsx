@@ -7,6 +7,7 @@ import { Github, Globe, X, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
+import { it } from "node:test";
 
 // Case studies data
 const caseStudiesData = [
@@ -249,6 +250,14 @@ export default function ProjectClient({ projects = [] }) {
             </div>
           )}
         </div>
+        <a
+                          href={caseStudy.behanceLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-row hover:text-black flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/60 dark:hover:bg-slate-200 py-4 px-4 rounded-lg font-medium transition-colors text-sm">
+                          {caseStudy.id === '1' ? 'View in Figma' : 'View on Behance'}
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
       </section>
 
       {/* Animated Mobile Menu Overlay */}
@@ -299,3 +308,11 @@ export default function ProjectClient({ projects = [] }) {
     </>
   );
 }
+
+
+
+
+// I have changed the abstraction level code to the new reforms 
+
+//  Now We have to get ahead in the roduction phase with all the base packages released last week with new designs...
+Please check it

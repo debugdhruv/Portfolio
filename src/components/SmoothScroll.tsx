@@ -21,6 +21,6 @@ export default function SmoothScroll() {
       lenis.destroy();
     };
   }, []);
-
+  
   return null; // doesn't render anything
 }
