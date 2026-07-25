@@ -113,7 +113,7 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
               <Link href="/projects" className={`${pathname === "/projects" ? "text-primary font-bold" : ""} hover:text-primary`}>Projects</Link>
             </li>
             <li>
-              <Link href="https://drive.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing.google.com/file/d/1Z2g4YOQaBA0rtcLai1wTxLhlnUCxo76t/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Resume</Link>
+              <Link href="https://drive.google.com/file/d/14M5kt93rog7VL4wJhhzhe0Xvrj5Co6yk/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Resume</Link>
             </li>
             <li>
               <Link href="/#footer" className="hover:text-primary">Contact</Link>
