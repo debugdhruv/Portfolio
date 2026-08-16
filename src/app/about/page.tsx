@@ -16,7 +16,7 @@ export default function About() {
   return (
     <>
       <NavBar onMenuToggle={setMenuOpen} />
-      
+
       <motion.main
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,6 +40,7 @@ export default function About() {
                   alt="Dhruv Narayan Tiwari"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   priority />
               </div>
             </motion.div>
@@ -88,6 +89,7 @@ export default function About() {
               </div>
 
               {/* Description with Read More functionality */}
+              {/* Description with Read More functionality */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -97,32 +99,44 @@ export default function About() {
 
                 <p className="text-lg leading-relaxed">
                   I&apos;m <span className="font-bold text-primary">Dhruv Narayan Tiwari</span>, a
-                  <span className="font-bold"> UI/UX Designer</span> and
-                  <span className="font-bold"> Frontend Developer</span> from India.
-                  I hold a <span className="font-bold">Bachelors degree in Computer Science</span> and have previously collaborated with startups and clients as a
-                  <span className="font-bold"> freelancer</span>.
+                  <span className="font-bold"> Full Stack Developer</span> and
+                  <span className="font-bold"> UI/UX Designer</span> from India.
+                  I hold a <span className="font-bold">B.Tech in Computer Science & Engineering</span> and have experience building and shipping
+                  <span className="font-bold"> production-ready digital products</span> for startups, businesses, and product teams.
                 </p>
+
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="space-y-4 hidden sm:inline-block overflow-hidden">
+
                   <p className="text-lg leading-relaxed">
-                    My experience includes designing and developing full-stack products like
-                    <span className="font-bold"> The Brain Room</span> a productivity and idea management platform and an <span className="font-bold">Environmental Pollutants Dashboard </span>
-                    that visualizes real-time environmental data using React and Node.js.
-                    I&apos;ve worked with startups such as <span className="font-bold">Vyapari Sang </span>
-                    and <span className="font-bold">Xeonic</span>, delivering user-focused design systems and scalable web solutions.
-                    As the <span className="font-bold">UI/UX Lead at GDSC</span>, I led a team whose startup idea
-                    won a <span className="font-bold">national award in 2023</span>.
+                    I work across the entire product lifecycle — from
+                    <span className="font-bold"> user research, wireframing, and design systems</span> to
+                    <span className="font-bold"> frontend development, backend integration, and deployment</span>.
+                    My projects include <span className="font-bold">EnviroTrack</span>, a full-stack environmental monitoring dashboard,
+                    <span className="font-bold"> The Brain Room</span>, an AI-powered productivity and mental health companion,
+                    and a <span className="font-bold">Support Ticket Analytics Dashboard</span> built with SQL and Python.
                   </p>
+
                   <p className="text-lg leading-relaxed">
-                    I specialize in tools & technologies like <span className="font-bold">Figma, Framer, Illustrator Protopie, Spline, React.js, Node.js, Tailwind CSS,</span>
-                    and <span className="font-bold">JavaScript, Github, CI/CD, Vercel, Render, Postman, MongoDB, Jira.
-                    </span>
+                    I&apos;ve worked as a <span className="font-bold">Product Designer</span> and currently work as a
+                    <span className="font-bold"> Full Stack Developer & UI/UX Designer</span>, collaborating with teams to turn
+                    ideas into scalable, intuitive, and user-focused products. I also served as
+                    <span className="font-bold"> UI/UX Design Lead at GDSC</span>, where I mentored students and helped build the design community.
                   </p>
+
+                  <p className="text-lg leading-relaxed">
+                    I specialize in technologies like
+                    <span className="font-bold"> React, Next.js, Node.js, TypeScript, JavaScript, Express, Tailwind CSS, SQL, MongoDB, AWS, Git, CI/CD, and Vercel</span>,
+                    alongside design and AI tools including
+                    <span className="font-bold"> Figma, Claude Code, Figma Make, Cursor, MCPs, and Stitch</span>.
+                  </p>
+
                 </motion.div>
+
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -131,28 +145,37 @@ export default function About() {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.4, ease: "easeOut" }}
                       className="space-y-4 overflow-hidden">
+
                       <p className="text-lg leading-relaxed">
-                        My experience includes designing and developing full-stack products like
-                        <span className="font-bold"> The Brain Room</span> a productivity and idea management platform and an <span className="font-bold">Environmental Pollutants Dashboard </span>
-                        that visualizes real-time environmental data using React and Node.js.
-                        I&apos;ve worked with startups such as <span className="font-bold">Vyapari Sang </span>
-                        and <span className="font-bold">Xeonic</span>, delivering user-focused design systems and scalable web solutions.
-                        As the <span className="font-bold">UI/UX Lead at GDSC</span>, I led a team whose startup idea
-                        won a <span className="font-bold">national award in 2023</span>.
+                        I work across the entire product lifecycle — from
+                        <span className="font-bold"> user research, wireframing, and design systems</span> to
+                        <span className="font-bold"> frontend development, backend integration, and deployment</span>.
+                        My projects include <span className="font-bold">EnviroTrack</span>, a full-stack environmental monitoring dashboard,
+                        <span className="font-bold"> The Brain Room</span>, an AI-powered productivity and mental health companion,
+                        and a <span className="font-bold">Support Ticket Analytics Dashboard</span> built with SQL and Python.
                       </p>
+
                       <p className="text-lg leading-relaxed">
-                        I specialize in tools & technologies like <span className="font-bold">Figma, Framer, Illustrator Protopie, Spline, React.js, Node.js, Tailwind CSS,</span>
-                        and <span className="font-bold">JavaScript, Github, CI/CD, Vercel, Render, Postman, MongoDB, Jira.
-                        </span>
+                        I&apos;ve worked as a <span className="font-bold">Product Designer</span> and currently work as a
+                        <span className="font-bold"> Full Stack Developer & UI/UX Designer</span>, collaborating with teams to turn
+                        ideas into scalable, intuitive, and user-focused products. I also served as
+                        <span className="font-bold"> UI/UX Design Lead at GDSC</span>, where I mentored students and helped build the design community.
                       </p>
+
+                      <p className="text-lg leading-relaxed">
+                        I specialize in technologies like
+                        <span className="font-bold"> React, Next.js, Node.js, TypeScript, JavaScript, Express, Tailwind CSS, SQL, MongoDB, AWS, Git, CI/CD, and Vercel</span>,
+                        alongside design and AI tools including
+                        <span className="font-bold"> Figma, Claude Code, Figma Make, Cursor, MCPs, and Stitch</span>.
+                      </p>
+
                     </motion.div>
                   )}
                 </AnimatePresence>
 
                 <button
                   onClick={() => setIsExpanded(!isExpanded)}
-                  className="sm:hidden font-bold text-muted-foreground hover:text-primary active:text-primary no-underline transition-colors duration-300"
-                >
+                  className="sm:hidden font-bold text-muted-foreground hover:text-primary active:text-primary no-underline transition-colors duration-300">
                   {isExpanded ? 'Read Less' : 'Read More'}
                 </button>
 
@@ -216,6 +239,7 @@ export default function About() {
                     alt="Interest 1"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
                   />
                 </div>
                 <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
@@ -224,6 +248,7 @@ export default function About() {
                     alt="Interest 2"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
                   />
                 </div>
                 <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
@@ -232,6 +257,7 @@ export default function About() {
                     alt="Interest 3"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
                   />
                 </div>
                 <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
@@ -240,6 +266,43 @@ export default function About() {
                     alt="Interest 4"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
+                  />
+                </div>
+                <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
+                  <Image
+                    src="/phd_5.jpg" // Replace with actual images
+                    alt="Interest 5"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
+                  />
+                </div>
+                <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
+                  <Image
+                    src="/phd_6.jpg" // Replace with actual images
+                    alt="Interest 6"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
+                  />
+                </div>
+                <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
+                  <Image
+                    src="/phd_7.jpg" // Replace with actual images
+                    alt="Interest 7"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
+                  />
+                </div>
+                <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden">
+                  <Image
+                    src="/phd_8.jpg" // Replace with actual images
+                    alt="Interest 8"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 25vw, (max-width: 1024px) 20vw, 16vw"
                   />
                 </div>
               </div>
@@ -259,7 +322,7 @@ export default function About() {
                 {/* DevGrowth Solutions */}
                 <div className="space-y-2">
                   <h3 className="font-semibold text-foreground font-inter">DevRipples Infotech Pvt. Ltd.</h3>
-                  <p className="text-sm text-muted-foreground">August 2025 - Present (Indore)</p>
+                  <p className="text-sm text-muted-foreground">June 2025 - January 2026 (Indore)</p>
                   <p className="text-sm text-foreground">
                     Leading end-to-end product design initiatives, translating business goals into intuitive user experiences, mentoring designers, and collaborating cross-functionally to deliver impactful, user-centered digital products.
                   </p>
@@ -271,15 +334,6 @@ export default function About() {
                   <p className="text-sm text-muted-foreground">July - November 2024</p>
                   {/* <p className="text-sm text-foreground">
                     Product Design - Creating mid-fidelity wireframes - high fidelity wireframes.
-                  </p> */}
-                </div>
-
-                {/* XYZ * abc.com Solutions */}
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-foreground font-inter">Vyapari Sang</h3>
-                  <p className="text-sm text-muted-foreground">August 2023 - November 2024</p>
-                  {/* <p className="text-sm text-foreground">
-                    Product Design - Creating mid-fidelity wireframes.
                   </p> */}
                 </div>
 
@@ -358,7 +412,7 @@ export default function About() {
                 <h4 className="font-semibold text-foreground mb-3 font-inter">Socials</h4>
                 <div className="flex items-center my-auto space-x-6">
                   <a
-                    href="https://instagram.com/dhruv_the_el_pee_da"
+                    href="https://instagram.com/itsdhruvkairos"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-foreground hover:text-primary transition-colors duration-300"
@@ -377,10 +431,9 @@ export default function About() {
                     href="https://www.behance.net/dhruvui"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-primary transition-colors duration-300"
-                  >
-                    <Image src="behance_dark.svg" width={28} height={28} alt="Behance Logo" className="dark:hidden inline-block" />
-                    <Image src="behance_light.svg" width={28} height={28} alt="Behance Logo" className="hidden dark:inline-block" />
+                    className="text-foreground hover:text-primary transition-colors duration-300">
+                    <Image src="behance_dark.svg" width={20} height={20} alt="Behance Logo" className="dark:hidden inline-block w-5 h-5" />
+                    <Image src="behance_light.svg" width={20} height={20} alt="Behance Logo" className="hidden dark:inline-block w-5 h-5" />
                   </a>
                 </div>
               </div>
@@ -398,7 +451,7 @@ export default function About() {
           className="w-full max-w-9xl mx-auto px-4 py-8"
         >
           <div className="flex justify-end">
-            <p className="text-sm text-foreground">© 2025 - All Rights Reserved</p>
+            <p className="text-sm text-foreground">© 2026 - All Rights Reserved</p>
           </div>
         </motion.footer>
       </motion.main>
@@ -417,7 +470,7 @@ export default function About() {
           >
             {/* Close Button */}
             <button>
-              <ArrowBigDown className=""/>
+              <ArrowBigDown className="" />
             </button>
 
             <button
@@ -432,7 +485,7 @@ export default function About() {
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
               <Link
-                href="https://drive.google.com/file/d/14M5kt93rog7VL4wJhhzhe0Xvrj5Co6yk/view?usp=sharing"
+                href="https://drive.google.com/file/d/1XGJ5Nr293vq_vLg0MgfUK6hfOR47VXH8/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">

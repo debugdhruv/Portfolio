@@ -25,14 +25,14 @@ declare global {
   }
 }
 
-const timeline: TimelineItem[] = [
-  { year: "2024 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
-  { year: "Aug 2025 - Dec 2025", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
-  { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
-  { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
-  { year: "Sept 2023 - 2024", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: false, external: false },
-  { year: "Feb 2020 - 2022", project: "Graphic Design & Content Writing", type: "Fiverr Freelancer", link: false, external: false },
-];
+// const timeline: TimelineItem[] = [
+//   { year: "2024 - Present", project: "Various Startups & Clients", type: "Freelancer", link: true, external: false },
+//   { year: "Aug 2025 - Dec 2025", project: "Dev Ripples", type: "Product Design Lead", link: false, external: false },
+//   { year: "Jul - Nov 2024", project: "Xeonic", type: "UI/UX Designer", link: false, external: false },
+//   { year: "Aug 2023 - Nov 2024", project: "Vyapari Sang", type: "Product Designer", link: false, external: false },
+//   { year: "Sept 2023 - 2024", project: "Google Developers Student Club", type: "UI/UX Design Campus Lead", link: false, external: false },
+//   { year: "Feb 2020 - 2022", project: "Graphic Design & Content Writing", type: "Fiverr Freelancer", link: false, external: false },
+// ];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -301,7 +301,7 @@ export default function Home() {
         {/* Featured Work */}
         <FeaturedWork />
 
-        {/* Timeline Section - RESPONSIVE */}
+{/* 
         <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -327,11 +327,7 @@ export default function Home() {
                   transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
                   viewport={{ once: true }}
                   className={`py-6 sm:py-8 hover:bg-black/15 dark:hover:bg-gray-900/50 transition-colors duration-300 px-3 sm:px-4`}>
-                  {/* ${
-                  item.link ? 'bg-black/20 dark:bg-gray-900/30' : ''
-                } */}
-
-                  {/* Mobile Layout - Stack vertically */}
+                
                   <div className="flex flex-col gap-2 sm:hidden">
                     <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       {item.year}
@@ -344,7 +340,6 @@ export default function Home() {
                     </span>
                   </div>
 
-                  {/* Desktop Layout - Grid */}
                   <div className="hidden sm:grid sm:grid-cols-3 gap-4 items-center">
                     <span className="text-base lg:text-lg text-gray-600 dark:text-gray-400">
                       {item.year}
@@ -362,7 +357,8 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
+
 
         {/* Last Lines */}
         <div className="mt-44 mb-16 sm:mx-auto mx-2 items-center flex-1 justify-center sm:max-w-6xl">
@@ -379,8 +375,8 @@ export default function Home() {
             My goal is to bridge the gap between design & development to build digital experiences that are both beautiful & functional.
           </motion.p>
           <motion.span className="flex mx-auto items-center justify-center mt-10 sm:mt-16 gap-4 sm:gap-4">
-            <Image src="/ico_dark.png" width={100} height={100} alt="Me" className="dark:hidden inline-block w-10 h-10 sm:w-16 sm:h-16" />
-            <Image src="/ico_light.png" width={100} height={100} alt="Me" className="dark:inline-block hidden w-10 h-10 sm:w-16 sm:h-16" />
+            <Image src="/ico_dark.png" width={100} height={100} alt="Me" className="dark:hidden inline-block w-10 h-10 sm:w-16 sm:h-16" style={{width: 'auto', height: 'auto'}} />
+            <Image src="/ico_light.png" width={100} height={100} alt="Me" className="dark:inline-block hidden w-10 h-10 sm:w-16 sm:h-16" style={{width: 'auto', height: 'auto'}} />
             <motion.div className="flex-col sm:space-y-1 text-left justify-start">
               <motion.h3 className="font-inter font-bold text-sm sm:text-xl">Dhruv Narayan Tiwari</motion.h3>
               <motion.h3 className="font-inter font-semi text-xs sm:text-lg text-foreground/50">Product Designer & Developer</motion.h3>
@@ -477,7 +473,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
-                href="https://instagram.com/dhruv_the_el_pee_da"
+                href="https://www.instagram.com/itsdhruvkairos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 px-4 py-4 border rounded-full hover:bg-primary hover:text-white dark:hover:text-foreground transition">
@@ -547,7 +543,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="hover:text-primary">© 2025 - All Rights Reserved</motion.p>
+              className="hover:text-primary">© 2026 - All Rights Reserved</motion.p>
           </div>
 
           <button
@@ -611,7 +607,7 @@ export default function Home() {
               <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
               <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
               <Link
-                href="https://drive.google.com/file/d/14M5kt93rog7VL4wJhhzhe0Xvrj5Co6yk/view?usp=sharing"
+                href="https://drive.google.com/file/d/1XGJ5Nr293vq_vLg0MgfUK6hfOR47VXH8/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl font-semibold hover:opacity-80">

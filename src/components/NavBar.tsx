@@ -69,8 +69,8 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
           <div className="hover:text-primary sm:ml-12 sm:text-3xl text-2xl font-barcode">
             <Link href="/" className="flex items-center">
               <div className="block sm:hidden relative w-10 h-10">
-                <Image src="/ico_light.png" alt="Dhruv Logo Light" fill className="object-contain dark:hidden" priority />
-                <Image src="/ico_dark.png" alt="Dhruv Logo Dark" fill className="object-contain hidden dark:block" priority />
+                <Image src="/ico_light.png" alt="Dhruv Logo Light" fill className="object-contain dark:hidden" sizes="40px" priority />
+                <Image src="/ico_dark.png" alt="Dhruv Logo Dark" fill className="object-contain hidden dark:block" sizes="40px" priority />
               </div>
               <span className="hidden sm:inline">DHRUV NARAYAN TIWARI</span>
             </Link>
@@ -113,7 +113,7 @@ const NavBar = ({ onMenuToggle }: NavBarProps) => {
               <Link href="/projects" className={`${pathname === "/projects" ? "text-primary font-bold" : ""} hover:text-primary`}>Projects</Link>
             </li>
             <li>
-              <Link href="https://drive.google.com/file/d/14M5kt93rog7VL4wJhhzhe0Xvrj5Co6yk/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Resume</Link>
+              <Link href="https://drive.google.com/file/d/1XGJ5Nr293vq_vLg0MgfUK6hfOR47VXH8/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Resume</Link>
             </li>
             <li>
               <Link href="/#footer" className="hover:text-primary">Contact</Link>

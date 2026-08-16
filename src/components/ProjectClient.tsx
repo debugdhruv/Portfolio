@@ -277,7 +277,7 @@ export default function ProjectClient({ projects = [] }) {
         <Link href="/about" className="text-4xl font-semibold hover:opacity-80">About</Link>
         <Link href="/projects" className="text-4xl font-semibold hover:opacity-80">Projects</Link>
         <Link
-          href="https://drive.google.com/file/d/14M5kt93rog7VL4wJhhzhe0Xvrj5Co6yk/view?usp=sharing"
+          href="https://drive.google.com/file/d/1XGJ5Nr293vq_vLg0MgfUK6hfOR47VXH8/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="text-4xl font-semibold hover:opacity-80">

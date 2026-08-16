@@ -347,7 +347,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from "framer-motion";
-import Image from "next/image";
+// import Image from "next/image";
 
 interface ProjectCard {
   id: string;
@@ -403,17 +403,17 @@ const FeaturedWork: React.FC = () => {
   ];
 
   // Gallery images from your screenshot
-  const galleryImages = [
-    '/PHOTO-2023-08-11-17-49-49.jpg',
-    '/PHOTO-2023-08-11-17-50-12.jpg',
-    '/PHOTO-2023-08-11-17-53-05.jpg',
-    '/PHOTO-2023-08-11-17-53-11.jpg',
-    '/PHOTO-2023-08-11-17-54-13.jpg',
-    '/PHOTO-2023-08-11-17-56-28.jpg',
-    '/PHOTO-2023-08-11-17-56-44.jpg',
-    '/PHOTO-2023-08-11-17-57-42.jpg',
-    '/PHOTO-2023-08-11-17-59-23.jpg',
-  ];
+  // const galleryImages = [
+  //   '/PHOTO-2023-08-11-17-49-49.jpg',
+  //   '/PHOTO-2023-08-11-17-50-12.jpg',
+  //   '/PHOTO-2023-08-11-17-53-05.jpg',
+  //   '/PHOTO-2023-08-11-17-53-11.jpg',
+  //   '/PHOTO-2023-08-11-17-54-13.jpg',
+  //   '/PHOTO-2023-08-11-17-56-28.jpg',
+  //   '/PHOTO-2023-08-11-17-56-44.jpg',
+  //   '/PHOTO-2023-08-11-17-57-42.jpg',
+  //   '/PHOTO-2023-08-11-17-59-23.jpg',
+  // ];
 
   const ReadTimeBar = ({ readTime }: { readTime: string }) => (
     <div className="absolute top-0 left-0 right-0 bg-black/20 text-white font-semibold font-inter text-xs py-2 px-4 backdrop-blur-sm overflow-hidden">
@@ -481,7 +481,7 @@ const FeaturedWork: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-[42px] sm:text-6xl md:text-7xl lg:text-[154px] text-center mt-10 sm:mt-16 font-whyte">
+          className="text-[42px] sm:text-6xl md:text-7xl lg:text-[154px] text-center mt-10 sm:mt-10 font-whyte">
           Featured Work
         </motion.h1>
 
@@ -498,14 +498,12 @@ const FeaturedWork: React.FC = () => {
         </motion.div>
 
         {/* Gallery Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-12 sm:mt-16">
-          
-          {/* Gallery Grid - 3 columns on mobile, 3 on tablet, 3 on desktop */}
           <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             {galleryImages.map((image, index) => (
               <motion.div
@@ -526,12 +524,11 @@ const FeaturedWork: React.FC = () => {
                   sizes="(max-width: 768px) 33vw, (max-width: 1024px) 33vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Optional hover overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
